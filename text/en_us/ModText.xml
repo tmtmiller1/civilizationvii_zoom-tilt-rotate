@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <EnglishText>
+        <Row Tag="LOC_MOD_BETTER_ZOOM_NAME">
+            <Text>Better Zoom In / Zoom Out</Text>
+        </Row>
+        <Row Tag="LOC_MOD_BETTER_ZOOM_DESCRIPTION">
+            <Text>Zooms past the camera's normal limits in steps, by field of view and tilt.</Text>
+        </Row>
+    </EnglishText>
+</Database>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="tmt-better-zoom" version="1" xmlns="ModInfo">
+    <Properties>
+        <Name>LOC_MOD_BETTER_ZOOM_NAME</Name>
+        <Description>LOC_MOD_BETTER_ZOOM_DESCRIPTION</Description>
+        <Authors>Tower</Authors>
+        <Version>0.1.0</Version>
+        <AffectsSavedGames>0</AffectsSavedGames>
+    </Properties>
+    <Dependencies>
+        <Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME" />
+    </Dependencies>
+    <ActionCriteria>
+        <Criteria id="always">
+            <AlwaysMet></AlwaysMet>
+        </Criteria>
+    </ActionCriteria>
+    <ActionGroups>
+        <ActionGroup id="better-zoom-game" scope="game" criteria="always">
+            <Actions>
+                <UIScripts>
+                    <Item>ui/better-zoom.js</Item>
+                </UIScripts>
+            </Actions>
+        </ActionGroup>
+    </ActionGroups>
+    <LocalizedText>
+        <File>text/en_us/ModText.xml</File>
+    </LocalizedText>
+</Mod>
