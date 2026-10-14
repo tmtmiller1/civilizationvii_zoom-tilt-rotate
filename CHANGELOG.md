@@ -2,6 +2,11 @@
 
 All notable changes to Zoom, Tilt, & Rotate are documented here. This project follows semantic versioning.
 
+## [1.0.1] - 2026-10-14
+
+- The license now says that Civilization VII and its art and data belong to Firaxis and 2K. The mod itself plays
+  exactly as in 1.0.0.
+
 ## [1.0.0] - 2026-10-14
 
 - First version. Zoom goes six notches past each end of the game's range: in to a close-up, and out until the camera
