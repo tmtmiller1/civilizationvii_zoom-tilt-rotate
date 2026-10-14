@@ -1,11 +1,236 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Database>
     <EnglishText>
-        <Row Tag="LOC_MOD_BETTER_ZOOM_NAME">
-            <Text>Better Zoom In / Zoom Out</Text>
+        <Row Tag="LOC_MOD_ZOOM_TILT_ROTATE_NAME">
+            <Text>Zoom, Tilt, &amp; Rotate</Text>
         </Row>
-        <Row Tag="LOC_MOD_BETTER_ZOOM_DESCRIPTION">
-            <Text>Zooms past the camera's normal limits in steps, by field of view and tilt.</Text>
+        <Row Tag="LOC_MOD_ZOOM_TILT_ROTATE_DESCRIPTION">
+            <Text>Zoom closer and farther than the game allows, tip the camera between looking straight down and looking toward the horizon, and turn the view to face any direction.</Text>
+        </Row>
+        <Row Tag="LOC_OPTIONS_GROUP_ZOOM_TILT_ROTATE">
+            <Text>Zoom, Tilt, &amp; Rotate</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP">
+            <Text>How close you can zoom in</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_DESCRIPTION">
+            <Text>How far the six extra notches take you past the game's closest view, which counts as 1x. At 7x you see a unit up close. At 18x a unit fills the screen. At 36x, the most the game's camera allows, you'll see a single sword blade and the ground goes soft. Changes apply right away.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER">
+            <Text>Closer (7x)</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER">
+            <Text>Much closer (18x)</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY">
+            <Text>All the way (36x)</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES">
+            <Text>{1_Num}°</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP">
+            <Text>Turn step</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION">
+            <Text>How far one press of a turn key, or the turn buttons in the camera panel, turns the view. The view stays facing that way until you turn it again or go back to normal.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP">
+            <Text>Angle step</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP_DESCRIPTION">
+            <Text>How far one press of an angle key, or the angle buttons in the camera panel, tips the camera between looking straight down and looking toward the horizon.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS">
+            <Text>Show the camera dials on screen</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS_DESCRIPTION">
+            <Text>Keeps a small zoom gauge, compass and angle gauge at the top left, under the victories and the journal, on a see-through backing. Drag along the zoom gauge to zoom, around the compass to turn the view, and along the angle gauge to tip it. They step aside while a screen or popup is open.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM">
+            <Text>Zoom gauge on screen</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM_DESCRIPTION">
+            <Text>Shows the zoom gauge among the dials on screen. Drag along it to zoom.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS">
+            <Text>Compass on screen</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS_DESCRIPTION">
+            <Text>Shows the compass among the dials on screen. Drag around it to turn the view.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE">
+            <Text>Angle gauge on screen</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE_DESCRIPTION">
+            <Text>Shows the angle gauge among the dials on screen. Drag along it to tip the camera.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS">
+            <Text>Camera keys</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_DESCRIPTION">
+            <Text>The keys that tip the camera, turn the view, go back to normal and open the camera panel. Out of the box they're Shift with the arrow keys, 0 and C.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_OPEN">
+            <Text>Change keys</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEYS_TITLE">
+            <Text>Camera keys</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEYS_INTRO">
+            <Text>Press Change, then the keys you want, holding any of Ctrl, Alt (Option on a Mac) and Shift with them. Esc stops waiting.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CHANGE">
+            <Text>Change</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CLEAR">
+            <Text>Clear</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEYS_RESET">
+            <Text>Reset keys</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEYS_WAITING">
+            <Text>Press the keys…</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEYS_NONE">
+            <Text>None</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_UP">
+            <Text>Angle toward the horizon</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_DOWN">
+            <Text>Angle toward straight down</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_LEFT">
+            <Text>Turn left</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_RIGHT">
+            <Text>Turn right</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_BACK_TO_NORMAL">
+            <Text>Back to normal</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_PANEL">
+            <Text>Open or close the camera panel</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_CAMERA_BUTTON">
+            <Text>Camera: zoom, angle and heading</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ANGLE">
+            <Text>Angle</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_PANEL_KEYS_TIP">
+            <Text>See the keys for turning, tipping, going back to normal and this panel, and change them.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_PANEL_HEADING">
+            <Text>Heading</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_ANGLE_FROM_DOWN">
+            <Text>{1_Num}° (from straight down)</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_DOWN">
+            <Text>Look {1_Num}° more straight down. Hold to keep going.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_UP">
+            <Text>Look {1_Num}° more toward the horizon. Hold to keep going.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_LEFT">
+            <Text>Turn {1_Num}° left. Hold to keep turning.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_RIGHT">
+            <Text>Turn {1_Num}° right. Hold to keep turning.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_TIP_COMPASS">
+            <Text>Drag around the compass to turn the view.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_TIP_GAUGE">
+            <Text>Drag along the gauge to tip the camera.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ZOOM">
+            <Text>Zoom</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_CLOSER">
+            <Text>{1_Num}x closer</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_FAR">
+            <Text>Far out</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_NORMAL">
+            <Text>Normal zoom</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_GAUGE">
+            <Text>Drag along the gauge to zoom.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_IN">
+            <Text>Zoom in one notch. Hold to keep zooming.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_OUT">
+            <Text>Zoom out one notch. Hold to keep zooming.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL">
+            <Text>Back to normal</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL_TIP">
+            <Text>Face north, use the game's own angle, and come back inside the game's zoom range.</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH">
+            <Text>Facing north</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_EAST">
+            <Text>Facing north-east</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_FACING_EAST">
+            <Text>Facing east</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_EAST">
+            <Text>Facing south-east</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH">
+            <Text>Facing south</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_WEST">
+            <Text>Facing south-west</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_FACING_WEST">
+            <Text>Facing west</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_WEST">
+            <Text>Facing north-west</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_OPTION">
+            <Text>Option</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ALT">
+            <Text>Alt</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CTRL">
+            <Text>Ctrl</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SHIFT">
+            <Text>Shift</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CMD">
+            <Text>Cmd</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_WIN">
+            <Text>Win</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SPACE">
+            <Text>Space</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ESC">
+            <Text>Esc</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_BACKSPACE">
+            <Text>Backspace</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ENTER">
+            <Text>Enter</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_TAB">
+            <Text>Tab</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_NUMPAD">
+            <Text>Num {1_Key}</Text>
         </Row>
     </EnglishText>
 </Database>

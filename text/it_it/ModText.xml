@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_ZOOM_TILT_ROTATE_NAME" Language="it_IT"><Text>Zoom, inclinazione e rotazione</Text></Replace>
+        <Replace Tag="LOC_MOD_ZOOM_TILT_ROTATE_DESCRIPTION" Language="it_IT"><Text>Avvicina e allontana la visuale oltre i limiti del gioco, inclinala da una vista dall'alto fino all'orizzonte e ruotala in qualsiasi direzione.</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_ZOOM_TILT_ROTATE" Language="it_IT"><Text>Zoom, inclinazione e rotazione</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP" Language="it_IT"><Text>Quanto puoi avvicinarti</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_DESCRIPTION" Language="it_IT"><Text>Fin dove ti portano i sei scatti di zoom in più oltre la visuale più vicina del gioco, che conta come 1x. A 7x vedi un'unità da vicino. A 18x un'unità riempie lo schermo. A 36x, il massimo consentito dalla visuale del gioco, vedrai la lama di una singola spada e il terreno diventa sfocato. Le modifiche si applicano subito.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="it_IT"><Text>Più vicino (7x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="it_IT"><Text>Molto più vicino (18x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="it_IT"><Text>Al massimo (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="it_IT"><Text>{1_Num}°</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="it_IT"><Text>Passo di rotazione</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="it_IT"><Text>Di quanto ruota la visuale ogni pressione di un tasto di rotazione o dei pulsanti di rotazione nel pannello della visuale. La visuale resta orientata così finché non la ruoti di nuovo o torni alla normalità.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP" Language="it_IT"><Text>Passo di inclinazione</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP_DESCRIPTION" Language="it_IT"><Text>Di quanto ogni pressione di un tasto di inclinazione o dei pulsanti di inclinazione nel pannello della visuale inclina la visuale, tra la vista dall'alto e la vista verso l'orizzonte.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS" Language="it_IT"><Text>Mostra gli indicatori della visuale sullo schermo</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS_DESCRIPTION" Language="it_IT"><Text>Mostra in alto a sinistra, sotto le vittorie e il registro, un piccolo indicatore dello zoom, una bussola e un indicatore dell'inclinazione su uno sfondo trasparente. Trascina lungo l'indicatore dello zoom per zoomare, attorno alla bussola per ruotare la visuale e lungo l'indicatore dell'inclinazione per inclinarla. Si spostano quando è aperta una schermata o una finestra.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM" Language="it_IT"><Text>Indicatore dello zoom sullo schermo</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM_DESCRIPTION" Language="it_IT"><Text>Mostra l'indicatore dello zoom tra gli indicatori sullo schermo. Trascina lungo l'indicatore per zoomare.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS" Language="it_IT"><Text>Bussola sullo schermo</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS_DESCRIPTION" Language="it_IT"><Text>Mostra la bussola tra gli indicatori sullo schermo. Trascina attorno alla bussola per ruotare la visuale.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE" Language="it_IT"><Text>Indicatore dell'inclinazione sullo schermo</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE_DESCRIPTION" Language="it_IT"><Text>Mostra l'indicatore dell'inclinazione tra gli indicatori sullo schermo. Trascina lungo l'indicatore per inclinare la visuale.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS" Language="it_IT"><Text>Tasti della visuale</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_DESCRIPTION" Language="it_IT"><Text>I tasti per inclinare la visuale, ruotarla, tornare alla normalità e aprire il pannello della visuale. Di base sono Maiusc con i tasti freccia, 0 e C.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_OPEN" Language="it_IT"><Text>Cambia tasti</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_TITLE" Language="it_IT"><Text>Tasti della visuale</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_INTRO" Language="it_IT"><Text>Premi Cambia, poi i tasti che vuoi, anche tenendo premuti Ctrl, Alt (Option su Mac) e Maiusc. Esc interrompe l'attesa.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CHANGE" Language="it_IT"><Text>Cambia</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CLEAR" Language="it_IT"><Text>Rimuovi</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_RESET" Language="it_IT"><Text>Reimposta tasti</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_WAITING" Language="it_IT"><Text>Premi i tasti…</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_NONE" Language="it_IT"><Text>Nessuno</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_UP" Language="it_IT"><Text>Inclina verso l'orizzonte</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_DOWN" Language="it_IT"><Text>Inclina verso la vista dall'alto</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_LEFT" Language="it_IT"><Text>Ruota a sinistra</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_RIGHT" Language="it_IT"><Text>Ruota a destra</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_BACK_TO_NORMAL" Language="it_IT"><Text>Torna alla normalità</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_PANEL" Language="it_IT"><Text>Apri o chiudi il pannello della visuale</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_CAMERA_BUTTON" Language="it_IT"><Text>Visuale: zoom, inclinazione e direzione</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ANGLE" Language="it_IT"><Text>Inclinazione</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_KEYS_TIP" Language="it_IT"><Text>Vedi i tasti per ruotare, inclinare, tornare alla normalità e aprire questo pannello, e cambiali.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_HEADING" Language="it_IT"><Text>Direzione</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ANGLE_FROM_DOWN" Language="it_IT"><Text>{1_Num}° (dalla vista dall'alto)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_DOWN" Language="it_IT"><Text>Guarda {1_Num}° più dall'alto. Tieni premuto per continuare.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_UP" Language="it_IT"><Text>Guarda {1_Num}° più verso l'orizzonte. Tieni premuto per continuare.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_LEFT" Language="it_IT"><Text>Ruota di {1_Num}° a sinistra. Tieni premuto per continuare a ruotare.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_RIGHT" Language="it_IT"><Text>Ruota di {1_Num}° a destra. Tieni premuto per continuare a ruotare.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_COMPASS" Language="it_IT"><Text>Trascina attorno alla bussola per ruotare la visuale.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_GAUGE" Language="it_IT"><Text>Trascina lungo l'indicatore per inclinare la visuale.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ZOOM" Language="it_IT"><Text>Zoom</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_CLOSER" Language="it_IT"><Text>{1_Num}x più vicino</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_FAR" Language="it_IT"><Text>Molto lontano</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_NORMAL" Language="it_IT"><Text>Zoom normale</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_GAUGE" Language="it_IT"><Text>Trascina lungo l'indicatore per zoomare.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_IN" Language="it_IT"><Text>Ingrandisci lo zoom di uno scatto. Tieni premuto per continuare.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_OUT" Language="it_IT"><Text>Riduci lo zoom di uno scatto. Tieni premuto per continuare.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL" Language="it_IT"><Text>Torna alla normalità</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL_TIP" Language="it_IT"><Text>Orienta la visuale a nord, usa l'inclinazione del gioco e torna entro i limiti di zoom del gioco.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH" Language="it_IT"><Text>Rivolta a nord</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_EAST" Language="it_IT"><Text>Rivolta a nord-est</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_EAST" Language="it_IT"><Text>Rivolta a est</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_EAST" Language="it_IT"><Text>Rivolta a sud-est</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH" Language="it_IT"><Text>Rivolta a sud</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_WEST" Language="it_IT"><Text>Rivolta a sud-ovest</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_WEST" Language="it_IT"><Text>Rivolta a ovest</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_WEST" Language="it_IT"><Text>Rivolta a nord-ovest</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_OPTION" Language="it_IT"><Text>Option</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ALT" Language="it_IT"><Text>Alt</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CTRL" Language="it_IT"><Text>Ctrl</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SHIFT" Language="it_IT"><Text>Maiusc</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CMD" Language="it_IT"><Text>Cmd</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_WIN" Language="it_IT"><Text>Win</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SPACE" Language="it_IT"><Text>Spazio</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ESC" Language="it_IT"><Text>Esc</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_BACKSPACE" Language="it_IT"><Text>Backspace</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ENTER" Language="it_IT"><Text>Invio</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_TAB" Language="it_IT"><Text>Tab</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_NUMPAD" Language="it_IT"><Text>Num {1_Key}</Text></Replace>
+    </LocalizedText>
+</Database>

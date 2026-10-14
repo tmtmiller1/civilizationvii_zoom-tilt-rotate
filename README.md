@@ -1,69 +1,193 @@
-# Better Zoom In / Zoom Out
+<p align="center">
+  <img src="docs/workshop-preview.png" width="148" alt="Zoom, Tilt, & Rotate logo">
+</p>
 
-A Civilization VII mod. Zoom closer and farther than the game allows. Keep scrolling in past the game's closest
-view and the camera narrows its lens until a single unit fills the screen; keep scrolling out past the farthest view
-and it widens and turns to look straight down, until most of the map fits on one screen.
+# Zoom, Tilt, & Rotate
 
-Each end adds six notches of zoom. Scrolling back the other way returns to the game's own view, one notch at a time.
+A Civilization VII mod that lets you control the camera's zoom (how close or far it is), angle (how steeply it looks
+down) and direction (which way it faces).
+
+- **Zoom.** Keep scrolling in past the base game's standard closest view and the lens narrows until a unit fills the
+  screen, up to 36 times closer than the game (you set max zoom in the settings). Keep scrolling out past the
+  farthest view and the camera widens and turns to look straight down until most of the map fits on one screen.
+- **Angle.** Tip the camera anywhere from straight down to nearly level with the horizon. It stays there.
+- **Direction.** Turn the view to face north, east, south, west or anything in between. It stays facing that way
+  until you turn it again.
+
+A camera panel by the minimap shows all three as a zoom gauge, a compass and an angle gauge. Drag a gauge or its
+slider to set it. The same three gauges can also sit on screen at the top left (turn them on in Options). Angle,
+direction, Back to normal and the panel have hotkeys, and you can change them in Options.
+
+**Back to normal**, a button on the panel or Shift + 0, faces north, goes back to the game's angle and returns the
+zoom to the game's normal range.
+
+- **Panning** moves the map at the same speed on screen however far in or out you are, and when the view is turned,
+  the arrow keys still move it left, right, up and down as you see it.
+- **The buy-tile and place-building screens** show the city the way the game normally does, then put your view back
+  when you close them.
+
+Use the mouse wheel, a trackpad, the keyboard, a gamepad or touch. The text is machine translated into 12 languages.
+
+<p>
+  <img src="docs/screenshots/03-close-up-36x.jpg" alt="The palace globe at 36 times closer than the game" width="49%">
+  <img src="docs/screenshots/05-far-out-top-down.jpg" alt="Zoomed all the way out, looking straight down at the map" width="49%">
+</p>
+
+Screenshots are from Civilization VII 1.5.0 with every other mod off. The two far-out views have the map revealed.
 
 ---
 
-## What the player does
+## Using it
 
-Zoom the way you already do: the mouse wheel, a two-finger scroll on a trackpad, the gamepad triggers, or a pinch
-on a touch screen. Nothing to set up.
+### Zoom
 
-- **Zooming in past the limit** narrows the field of view from the game's 35 degrees down to 5, about seven times
-  closer than the game's closest view. Unit models hold up all the way in.
+Zoom with the mouse wheel, a two-finger scroll on a trackpad, the gamepad triggers, or a pinch on a touch screen.
+
+- **Zooming in past the limit** narrows the field of view from the game's 35 degrees. Set how far in Options >
+  Add-ons > Zoom, Tilt, & Rotate > "How close you can zoom in":
+
+  | Setting | Lens at the last notch | Compared with the game's closest view | What you see |
+  | --- | --- | --- | --- |
+  | Closer (7x), the default | 5 degrees | 7.2 times closer | A unit up close, models sharp |
+  | Much closer (18x) | 2 degrees | 18 times closer | A unit fills the screen; the ground starts to go soft |
+  | All the way (36x) | 1 degree | 36 times closer | A single sword blade; the ground is a blur |
+
+  Either way it takes six notches, each magnifying by the same amount. A change takes effect immediately, even while
+  you're zoomed in, and is saved between games.
+
+<p>
+  <img src="docs/screenshots/01-game-closest-view.jpg" alt="The game's own closest view" width="49%">
+  <img src="docs/screenshots/02-close-up-7x.jpg" alt="The same soldiers at the default 7 times closer" width="49%">
+</p>
+
+  The game's closest view (left) and the default close-up of the same soldiers (right).
+
 - **Zooming out past the limit** widens the field of view to 90 degrees while the camera turns to look straight
-  down, so you see the map rather than the sky and the horizon.
-- **Panning** with the keyboard, the screen edge or a gamepad slows down as you zoom in, so each step moves the
-  same share of the screen at any zoom. Dragging the map with the mouse keeps the ground under the cursor, as it
-  always has.
-- **A trackpad scroll stops where you stop.** The view follows the camera instead of racing ahead of it, and it does
-  not spring back out after a zoom in.
-- **City screens.** Buying a tile or placing a building frames the city as usual. When you close the screen the
-  view goes back to where you had it, even past the limit.
-- **The game moving the camera** (a notification, selecting a unit) is fine: the next zoom picks up from wherever
-  the camera ended up.
+  down, so you see the map instead of sky. That's also six notches.
+
+<p>
+  <img src="docs/screenshots/04-game-farthest-view.jpg" alt="The game's own farthest view" width="49%">
+  <img src="docs/screenshots/05-far-out-top-down.jpg" alt="Zoomed all the way out, looking straight down" width="49%">
+</p>
+
+  The game's farthest view (left) and six notches past it (right).
+
+- **Scrolling back** from past either limit moves back one notch at a time instead of snapping to the game's view.
+- **On a trackpad**, zooming stops when your fingers stop, and lifting them doesn't zoom you back out.
+- **City screens.** The buy-tile and place-building screens show the city the way the game normally does, even if
+  you opened them from a close-up. Closing the screen puts your view back where it was.
+- **The game moving the camera.** When the game moves the camera to a new zoom (a notification, a tutorial step),
+  the game's own lens comes back as the camera arrives. When it moves the camera without changing the zoom (jumping
+  to your next unit), you stay in the close-up you picked.
+
+### Angle and direction
+
+- **Angle** runs from straight down (0 degrees) to nearly level with the horizon (80 degrees). Until you change it,
+  the camera uses the game's own angle, which shifts as you zoom.
+- **Direction** stays where you set it through zooming, panning, city screens and the game moving the camera.
+- **Tap or hold.** A tap moves one step and lands on a round number, so north, east, south and west are each one tap
+  away. Holding the key or button turns or tips the camera smoothly until you let go. Set the step sizes in Options:
+  the turn step (45 or 90 degrees) and the angle step (5, 10 or 15 degrees).
+- **The game's own rotate still works.** Holding Alt (Option on a Mac) and dragging turns the view until you let go,
+  then it swings back to north, as in the unmodded game. The panel and gauges follow it.
+- **Panning follows the screen.** With the view turned, the arrow keys, the screen edge and a gamepad still move the
+  map left, right, up and down as you see it.
+- Every change eases in over about half a second.
+
+<p>
+  <img src="docs/screenshots/06-low-angle-facing-west.jpg" alt="Tipped to 70 degrees and facing west, with the camera panel open" width="49%">
+  <img src="docs/screenshots/07-straight-down-with-dials.jpg" alt="Looking straight down over the capital, with the gauges on screen" width="49%">
+</p>
+
+Tipped toward the horizon and facing west (left), and looking straight down with the gauges on screen (right).
+
+Default keys:
+
+| Keys | What they do |
+| --- | --- |
+| Shift + Up / Shift + Down | Angle toward the horizon / toward straight down |
+| Shift + Left / Shift + Right | Turn left / right |
+| Shift + 0 | Back to normal |
+| Shift + C | Open or close the camera panel |
+
+Change any of them in Options > Add-ons > Zoom, Tilt, & Rotate > Camera keys: press Change, then the keys you want,
+holding any of Ctrl, Alt (Option on a Mac) and Shift. Esc cancels. If the combination is already used by another action,
+it moves to the new one.
+
+The **camera panel** opens from the camera button next to the minimap's lens button, or with Shift + C. It has:
+
+- a zoom gauge covering the whole range, including the close-up and far-out notches
+- a compass showing which way the view faces
+- an angle gauge showing how far the camera tips
+
+Each gauge has a button on either side (click to step, hold to keep going) and a slider underneath, and you can drag
+the gauge itself. Below them are Back to normal and Camera keys, which lists the keys and lets you change them. The
+panel uses the game's own panel style and opens beside the minimap like the lens panel.
+
+<p>
+  <img src="docs/screenshots/08-camera-panel.jpg" alt="The camera panel" width="24%">
+  <img src="docs/screenshots/09-options.jpg" alt="The mod's rows in Options > Add-ons" width="37%">
+  <img src="docs/screenshots/10-camera-keys.jpg" alt="The Camera keys window" width="37%">
+</p>
+
+**Gauges on screen.** Turn on "Show the camera dials on screen" in Options to keep the zoom gauge, compass and angle
+gauge at the top left of the screen, below the victories, journal and quest list. Each one has its own option to hide
+it. You can drag them to set the camera, and they hide while a screen or popup is open.
+
+## Why another zoom mod
+
+I tried the existing zoom mods first. The closest any of them got was about 2.3 times closer than the game, the close-up
+in one of them let go after a few seconds, and none let me set the camera's angle or turn it to face other directions
+and stay put. One of them blamed the engine: it said the close-up snaps back because the engine forces it, and that the
+engine can't report or set a heading. I tested that, and it's not true. The engine holds a narrow lens indefinitely,
+accepts a field of view from 1 to 120 degrees, and reports and holds any heading and any angle from straight down to 80
+degrees. The other mod never gave a reason and its author didn't answer when I wrote to them, but it stopped short in
+the same way. On examination, the limits were in the mods, and it was frustrating to see players told otherwise. This
+mod zooms up to 36 times closer than the game (7 times by default; you can change it in Options), zooms out until the
+camera looks straight down, and lets you set the angle and direction yourself.
+
+The measurements, side by side with the other mods (not named), are in
+[docs/compared-with-other-zoom-mods.md](docs/compared-with-other-zoom-mods.md).
 
 ## Install
 
-Copy `better-zoom.modinfo`, `text/` and `ui/` into a folder in the game's `Mods` directory, then enable Better Zoom
-In / Zoom Out in the game's mod settings. It changes nothing in a save, so it can be turned on or off at any time.
+Subscribe on the Steam Workshop, or download `zoom-tilt-rotate-vX.Y.Z.zip` from the GitHub releases and unzip it into
+the game's `Mods` directory, so the `zoom-tilt-rotate` folder sits directly inside it. Then enable Zoom, Tilt, &
+Rotate in the game's mod settings. Your saves aren't touched, so you can turn it on or off at any time.
 
-Made for Civilization VII 1.5.0.
+The `Mods` directory is `%LOCALAPPDATA%\Firaxis Games\Sid Meier's Civilization VII\Mods` on Windows and
+`~/Library/Application Support/Civilization VII/Mods` on a Mac.
+
+Made for Civilization VII 1.5.0. The text is in English, German, Spanish, French, Italian, Japanese, Korean, Polish,
+Portuguese (Brazil), Russian and Chinese (Simplified and Traditional), following the game's language setting.
 
 ## Known limits
 
-- Tested with a Mac trackpad, mouse drag, and the game's own input events for the gamepad and touch. Not yet tried
-  with a physical mouse wheel, a real gamepad or a touch screen.
-- On a Mac trackpad, zoom with a two-finger scroll. Pinching has not been seen to zoom the game.
+- It's been played with a Mac trackpad and keyboard. The mouse wheel was tested with input sent through macOS, and
+  the gamepad and touch screen with input sent through the game, but none of them on real hardware yet.
+- On a Mac trackpad, zoom with a two-finger scroll. A pinch hasn't zoomed the game in testing.
+- In the close-up the game's yield badges keep their full size, so at 5 degrees and closer they cover much of the
+  city.
 - A notch sent in the first moment of one of the game's own camera moves can cut that move short, as in the
   unmodded game.
+- Alt (Option on a Mac) is the game's own camera key, so the default keys use Shift instead.
 
 ## How it works
 
 The game's camera zooms from 0 (closest) to 1 (farthest). The mod keeps its own zoom value that runs past both ends
-and, beyond them, changes the camera's field of view (and, going out, its tilt) instead of the zoom. All of it is
-in `ui/better-zoom.js`, a UI script that replaces the camera controller's zoom handlers.
-
-A few things about the engine that shaped it:
-
-- The camera has no way to read its field of view, so the mod measures it from where two points on the screen land
-  on the map. That keeps it right when something else resets the camera.
-- Setting the field of view cancels a zoom that is still moving, so the lens past a limit is applied only once the
-  zoom has reached that limit.
-- A trackpad scroll ends in a run of wheel events with no movement in them, and the game reports each as a scroll
-  down. The mod ignores those for a second after a real scroll event.
-- `Camera.getState()` reports the zoom as it eases toward its target, so the mod steps from the zoom it asked for,
-  not from what the camera shows mid-move.
+and, beyond them, changes the camera's field of view (and, going out, its tilt) instead of the zoom. It sets the
+angle and heading through the camera's own tilt and rotate calls, eases them itself, and puts them back whenever the
+game resets the camera. The details, and what the engine allows, are in [docs/how-it-works.md](docs/how-it-works.md).
 
 ## Development
 
-`devtools/` holds the tests. Each one runs inside a running game through Tower Bench's `eval`, so they need the game
-running with its UI debugger on port 9444, Tower Bench at `../../tools/tower-bench`, and a game with a founded
-capital that has a population point waiting to be placed:
+`npm run verify` runs lint, a syntax check and the unit tests in `tests/`. [CONTRIBUTING.md](CONTRIBUTING.md) has the
+layout.
+
+`devtools/` holds the in-game checks. Each one runs inside a running game through Tower Bench's `eval`, so they need
+the game running with its UI debugger on port 9444, Tower Bench at `../../tools/tower-bench`, and a game with a
+founded capital that has a population point waiting to be placed. `game-move-recovery.js` also wants one of your
+units at least six tiles from the capital:
 
 ```
 devtools/run.sh devtools/full-range.js
@@ -71,6 +195,9 @@ devtools/run.sh devtools/fast-notches.js
 devtools/run.sh devtools/trackpad-stream.js
 devtools/run.sh devtools/trackpad-tail.js
 devtools/run.sh devtools/camera-move-and-city-screens.js
+devtools/run.sh devtools/game-move-recovery.js
+devtools/run.sh devtools/close-up-reach.js
+devtools/run.sh devtools/zoom-tilt-rotate.js
 devtools/run.sh devtools/panning-and-lens-reset.js
 devtools/run.sh devtools/gamepad-trigger.js
 devtools/run.sh devtools/touch-pinch.js

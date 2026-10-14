@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_ZOOM_TILT_ROTATE_NAME" Language="ja_JP"><Text>ズーム・チルト・回転</Text></Replace>
+        <Replace Tag="LOC_MOD_ZOOM_TILT_ROTATE_DESCRIPTION" Language="ja_JP"><Text>ゲームの限界を超えてズームイン・ズームアウトし、真上からの見下ろしから地平線を望む角度までカメラを傾け、好きな方向へ視点を回転できます。</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_ZOOM_TILT_ROTATE" Language="ja_JP"><Text>ズーム・チルト・回転</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP" Language="ja_JP"><Text>ズームインの限界</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_DESCRIPTION" Language="ja_JP"><Text>ゲーム本来の最も近い視点を1xとして、追加の6段階でどこまで近づけるかを設定します。7xではユニットを間近で見られます。18xではユニットが画面いっぱいに映ります。ゲームのカメラの限界である36xでは剣の刃1本まで見え、地面はぼやけます。変更はすぐに反映されます。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="ja_JP"><Text>近く (7x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="ja_JP"><Text>もっと近く (18x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="ja_JP"><Text>最大まで (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="ja_JP"><Text>{1_Num}°</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="ja_JP"><Text>回転の幅</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="ja_JP"><Text>回転キー、またはカメラパネルの回転ボタンを1回押したときに視点が回転する角度です。もう一度回転させるか元に戻すまで、視点はその向きのままです。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP" Language="ja_JP"><Text>傾きの幅</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP_DESCRIPTION" Language="ja_JP"><Text>傾きキー、またはカメラパネルの傾きボタンを1回押したときに、真上からの見下ろしと地平線を望む角度の間でカメラが傾く量です。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS" Language="ja_JP"><Text>カメラのダイヤルを画面に表示</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS_DESCRIPTION" Language="ja_JP"><Text>左上の勝利とジャーナルの下に、小さなズームゲージ、コンパス、傾きゲージを半透明の背景つきで表示します。ズームゲージに沿ってドラッグするとズーム、コンパスの周りをドラッグすると視点の回転、傾きゲージに沿ってドラッグするとカメラが傾きます。画面やポップアップが開いている間は表示されません。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM" Language="ja_JP"><Text>画面上のズームゲージ</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM_DESCRIPTION" Language="ja_JP"><Text>画面上のダイヤルにズームゲージを表示します。ゲージに沿ってドラッグするとズームします。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS" Language="ja_JP"><Text>画面上のコンパス</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS_DESCRIPTION" Language="ja_JP"><Text>画面上のダイヤルにコンパスを表示します。コンパスの周りをドラッグすると視点が回転します。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE" Language="ja_JP"><Text>画面上の傾きゲージ</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE_DESCRIPTION" Language="ja_JP"><Text>画面上のダイヤルに傾きゲージを表示します。ゲージに沿ってドラッグするとカメラが傾きます。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS" Language="ja_JP"><Text>カメラのキー</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_DESCRIPTION" Language="ja_JP"><Text>カメラを傾ける、視点を回転させる、元に戻す、カメラパネルを開く、の各キーです。初期設定ではShift+矢印キー、0、Cです。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_OPEN" Language="ja_JP"><Text>キーを変更</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_TITLE" Language="ja_JP"><Text>カメラのキー</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_INTRO" Language="ja_JP"><Text>「変更」を押してから、割り当てたいキーを押してください。Ctrl、Alt (MacではOption)、Shiftを組み合わせて押すこともできます。Escで待機をやめます。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CHANGE" Language="ja_JP"><Text>変更</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CLEAR" Language="ja_JP"><Text>クリア</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_RESET" Language="ja_JP"><Text>キーをリセット</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_WAITING" Language="ja_JP"><Text>キーを押してください…</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_NONE" Language="ja_JP"><Text>なし</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_UP" Language="ja_JP"><Text>地平線の方へ傾ける</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_DOWN" Language="ja_JP"><Text>真上からの見下ろしの方へ傾ける</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_LEFT" Language="ja_JP"><Text>左に回転</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_RIGHT" Language="ja_JP"><Text>右に回転</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_BACK_TO_NORMAL" Language="ja_JP"><Text>元に戻す</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_PANEL" Language="ja_JP"><Text>カメラパネルを開く/閉じる</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_CAMERA_BUTTON" Language="ja_JP"><Text>カメラ: ズーム、傾き、向き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ANGLE" Language="ja_JP"><Text>傾き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_KEYS_TIP" Language="ja_JP"><Text>回転、傾き、元に戻す、このパネルのキーを確認して変更します。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_HEADING" Language="ja_JP"><Text>向き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ANGLE_FROM_DOWN" Language="ja_JP"><Text>{1_Num}° (真下から)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_DOWN" Language="ja_JP"><Text>{1_Num}°真下寄りに傾けます。長押しで続けて傾けます。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_UP" Language="ja_JP"><Text>{1_Num}°地平線寄りに傾けます。長押しで続けて傾けます。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_LEFT" Language="ja_JP"><Text>{1_Num}°左に回転します。長押しで続けて回転します。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_RIGHT" Language="ja_JP"><Text>{1_Num}°右に回転します。長押しで続けて回転します。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_COMPASS" Language="ja_JP"><Text>コンパスの周りをドラッグすると視点が回転します。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_GAUGE" Language="ja_JP"><Text>ゲージに沿ってドラッグするとカメラが傾きます。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ZOOM" Language="ja_JP"><Text>ズーム</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_CLOSER" Language="ja_JP"><Text>{1_Num}倍に拡大</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_FAR" Language="ja_JP"><Text>通常より遠く</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_NORMAL" Language="ja_JP"><Text>通常のズーム</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_GAUGE" Language="ja_JP"><Text>ゲージに沿ってドラッグするとズームします。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_IN" Language="ja_JP"><Text>1段階ズームインします。長押しで続けてズームします。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_OUT" Language="ja_JP"><Text>1段階ズームアウトします。長押しで続けてズームします。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL" Language="ja_JP"><Text>元に戻す</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL_TIP" Language="ja_JP"><Text>北向きにし、ゲーム本来の角度に戻し、ゲームのズーム範囲内に戻ります。</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH" Language="ja_JP"><Text>北向き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_EAST" Language="ja_JP"><Text>北東向き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_EAST" Language="ja_JP"><Text>東向き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_EAST" Language="ja_JP"><Text>南東向き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH" Language="ja_JP"><Text>南向き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_WEST" Language="ja_JP"><Text>南西向き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_WEST" Language="ja_JP"><Text>西向き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_WEST" Language="ja_JP"><Text>北西向き</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_OPTION" Language="ja_JP"><Text>Option</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ALT" Language="ja_JP"><Text>Alt</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CTRL" Language="ja_JP"><Text>Ctrl</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SHIFT" Language="ja_JP"><Text>Shift</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CMD" Language="ja_JP"><Text>Cmd</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_WIN" Language="ja_JP"><Text>Win</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SPACE" Language="ja_JP"><Text>スペース</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ESC" Language="ja_JP"><Text>Esc</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_BACKSPACE" Language="ja_JP"><Text>Backspace</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ENTER" Language="ja_JP"><Text>Enter</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_TAB" Language="ja_JP"><Text>Tab</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_NUMPAD" Language="ja_JP"><Text>{1_Key}（テンキー）</Text></Replace>
+    </LocalizedText>
+</Database>

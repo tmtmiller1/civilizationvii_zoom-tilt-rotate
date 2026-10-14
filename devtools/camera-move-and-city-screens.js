@@ -34,4 +34,24 @@ for (const [screen, context] of Object.entries(screens)) {
   visit.afterClose = where();
   results[screen] = visit;
 }
+
+// The same two screens opened at the close-up. The game works out its framing from the lens on screen, so it
+// should frame the city the way it does without the mod (zoom 0.3), not from the farthest view, and closing the
+// screen should bring the close-up back.
+for (const [screen, context] of Object.entries(screens)) {
+  await resetCamera(0.3);
+  for (let i = 0; i < 10; i++) {
+    scrollIn();
+    await waitMs(400);
+  }
+  await waitMs(1500);
+  const visit = { before: where() };
+  InterfaceMode.switchTo(`INTERFACEMODE_${screen}`, context);
+  await waitMs(2500);
+  visit.open = where();
+  InterfaceMode.switchToDefault();
+  await waitMs(2500);
+  visit.afterClose = where();
+  results[`${screen} at the close-up`] = visit;
+}
 await resetCamera(0.4);

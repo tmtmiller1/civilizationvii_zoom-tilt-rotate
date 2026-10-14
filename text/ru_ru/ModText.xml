@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_ZOOM_TILT_ROTATE_NAME" Language="ru_RU"><Text>Зум, наклон и поворот</Text></Replace>
+        <Replace Tag="LOC_MOD_ZOOM_TILT_ROTATE_DESCRIPTION" Language="ru_RU"><Text>Приближайте и отдаляйте камеру сильнее, чем позволяет игра, наклоняйте её от взгляда строго вниз до взгляда на горизонт и поворачивайте обзор в любую сторону.</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_ZOOM_TILT_ROTATE" Language="ru_RU"><Text>Зум, наклон и поворот</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP" Language="ru_RU"><Text>Насколько близко можно приблизить</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_DESCRIPTION" Language="ru_RU"><Text>Насколько дальше самого близкого вида в игре (он считается за 1x) уводят шесть дополнительных делений. При 7x юнит виден вблизи. При 18x юнит заполняет весь экран. При 36x — это максимум, который позволяет камера игры, — вы увидите отдельный клинок меча, а земля станет размытой. Изменения применяются сразу.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="ru_RU"><Text>Ближе (7x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="ru_RU"><Text>Гораздо ближе (18x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="ru_RU"><Text>До предела (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="ru_RU"><Text>{1_Num}°</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="ru_RU"><Text>Шаг поворота</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="ru_RU"><Text>На сколько поворачивается обзор при одном нажатии клавиши поворота или кнопок поворота на панели камеры. Обзор остаётся в этом направлении, пока вы не повернёте его снова или не вернёте обычный вид.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP" Language="ru_RU"><Text>Шаг наклона</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP_DESCRIPTION" Language="ru_RU"><Text>На сколько наклоняется камера при одном нажатии клавиши наклона или кнопок наклона на панели камеры — между взглядом строго вниз и взглядом на горизонт.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS" Language="ru_RU"><Text>Показывать шкалы камеры на экране</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS_DESCRIPTION" Language="ru_RU"><Text>Показывает небольшую шкалу масштаба, компас и шкалу наклона в левом верхнем углу, под победами и журналом, на полупрозрачной подложке. Проведите по шкале масштаба, чтобы изменить масштаб, вокруг компаса — чтобы повернуть обзор, а по шкале наклона — чтобы наклонить камеру. Пока открыт экран или всплывающее окно, они убираются.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM" Language="ru_RU"><Text>Шкала масштаба на экране</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM_DESCRIPTION" Language="ru_RU"><Text>Показывает шкалу масштаба среди шкал на экране. Проведите по ней, чтобы изменить масштаб.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS" Language="ru_RU"><Text>Компас на экране</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS_DESCRIPTION" Language="ru_RU"><Text>Показывает компас среди шкал на экране. Проведите вокруг него, чтобы повернуть обзор.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE" Language="ru_RU"><Text>Шкала наклона на экране</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE_DESCRIPTION" Language="ru_RU"><Text>Показывает шкалу наклона среди шкал на экране. Проведите по ней, чтобы наклонить камеру.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS" Language="ru_RU"><Text>Клавиши камеры</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_DESCRIPTION" Language="ru_RU"><Text>Клавиши, которые наклоняют камеру, поворачивают обзор, возвращают обычный вид и открывают панель камеры. По умолчанию это Shift со стрелками, 0 и C.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_OPEN" Language="ru_RU"><Text>Изменить клавиши</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_TITLE" Language="ru_RU"><Text>Клавиши камеры</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_INTRO" Language="ru_RU"><Text>Нажмите «Изменить», а затем нужные клавиши. С ними можно удерживать Ctrl, Alt (Option на Mac) и Shift в любом сочетании. Esc отменяет ожидание.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CHANGE" Language="ru_RU"><Text>Изменить</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CLEAR" Language="ru_RU"><Text>Очистить</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_RESET" Language="ru_RU"><Text>Сбросить клавиши</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_WAITING" Language="ru_RU"><Text>Нажмите клавиши…</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_NONE" Language="ru_RU"><Text>Нет</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_UP" Language="ru_RU"><Text>Наклон к горизонту</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_DOWN" Language="ru_RU"><Text>Наклон к виду строго вниз</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_LEFT" Language="ru_RU"><Text>Поворот влево</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_RIGHT" Language="ru_RU"><Text>Поворот вправо</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_BACK_TO_NORMAL" Language="ru_RU"><Text>Вернуть обычный вид</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_PANEL" Language="ru_RU"><Text>Открыть или закрыть панель камеры</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_CAMERA_BUTTON" Language="ru_RU"><Text>Камера: масштаб, наклон и направление</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ANGLE" Language="ru_RU"><Text>Наклон</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_KEYS_TIP" Language="ru_RU"><Text>Посмотреть и изменить клавиши для поворота, наклона, возврата к обычному виду и этой панели.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_HEADING" Language="ru_RU"><Text>Направление</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ANGLE_FROM_DOWN" Language="ru_RU"><Text>{1_Num}° (от взгляда строго вниз)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_DOWN" Language="ru_RU"><Text>Наклонить камеру на {1_Num}° ближе к виду строго вниз. Удерживайте, чтобы продолжать.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_UP" Language="ru_RU"><Text>Наклонить камеру на {1_Num}° ближе к горизонту. Удерживайте, чтобы продолжать.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_LEFT" Language="ru_RU"><Text>Повернуть на {1_Num}° влево. Удерживайте, чтобы продолжать поворот.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_RIGHT" Language="ru_RU"><Text>Повернуть на {1_Num}° вправо. Удерживайте, чтобы продолжать поворот.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_COMPASS" Language="ru_RU"><Text>Проведите вокруг компаса, чтобы повернуть обзор.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_GAUGE" Language="ru_RU"><Text>Проведите по шкале, чтобы наклонить камеру.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ZOOM" Language="ru_RU"><Text>Масштаб</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_CLOSER" Language="ru_RU"><Text>Ближе в {1_Num}x</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_FAR" Language="ru_RU"><Text>Дальше обычного</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_NORMAL" Language="ru_RU"><Text>Обычный масштаб</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_GAUGE" Language="ru_RU"><Text>Проведите по шкале, чтобы изменить масштаб.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_IN" Language="ru_RU"><Text>Приблизить на одно деление. Удерживайте, чтобы продолжать.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_OUT" Language="ru_RU"><Text>Отдалить на одно деление. Удерживайте, чтобы продолжать.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL" Language="ru_RU"><Text>Обычный вид</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL_TIP" Language="ru_RU"><Text>Повернуть на север, вернуть игровой наклон и вернуться в обычные пределы масштаба игры.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH" Language="ru_RU"><Text>На север</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_EAST" Language="ru_RU"><Text>На северо-восток</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_EAST" Language="ru_RU"><Text>На восток</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_EAST" Language="ru_RU"><Text>На юго-восток</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH" Language="ru_RU"><Text>На юг</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_WEST" Language="ru_RU"><Text>На юго-запад</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_WEST" Language="ru_RU"><Text>На запад</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_WEST" Language="ru_RU"><Text>На северо-запад</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_OPTION" Language="ru_RU"><Text>Option</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ALT" Language="ru_RU"><Text>Alt</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CTRL" Language="ru_RU"><Text>Ctrl</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SHIFT" Language="ru_RU"><Text>Shift</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CMD" Language="ru_RU"><Text>Cmd</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_WIN" Language="ru_RU"><Text>Win</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SPACE" Language="ru_RU"><Text>Пробел</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ESC" Language="ru_RU"><Text>Esc</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_BACKSPACE" Language="ru_RU"><Text>Backspace</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ENTER" Language="ru_RU"><Text>Enter</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_TAB" Language="ru_RU"><Text>Tab</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_NUMPAD" Language="ru_RU"><Text>Num {1_Key}</Text></Replace>
+    </LocalizedText>
+</Database>

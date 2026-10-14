@@ -23,3 +23,21 @@ results.wholeGesture = await replay(recordedGesture);
 await resetCamera(0.4);
 results.withoutZeroEvents = await replay(recordedGesture.filter((event) => event[2] !== 0));
 await resetCamera(0.4);
+
+// A tail on its own at the close-up, more than a second after any real scroll: six zero events over 120 ms. A
+// trackpad sends this when the fingers rest and lift without moving. The lens should stay at the close-up (0.1 eased
+// out to 13 degrees).
+await resetCamera(0.3);
+for (let i = 0; i < 10; i++) {
+  scrollIn();
+  await waitMs(400);
+}
+await waitMs(2500);
+results.lateTail = { before: cameraState() };
+for (let i = 0; i < 6; i++) {
+  controller.handleInput({ detail: { name: "mousewheel-down", status: FINISH, x: 0, y: 0 } });
+  await waitMs(20);
+}
+await waitMs(2000);
+results.lateTail.after = cameraState();
+await resetCamera(0.4);

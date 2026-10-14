@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_ZOOM_TILT_ROTATE_NAME" Language="ko_KR"><Text>줌, 틸트, 회전</Text></Replace>
+        <Replace Tag="LOC_MOD_ZOOM_TILT_ROTATE_DESCRIPTION" Language="ko_KR"><Text>게임이 허용하는 것보다 더 가까이, 더 멀리 줌하고, 바로 아래를 내려다보는 각도에서 지평선을 바라보는 각도까지 카메라를 기울이며, 원하는 방향으로 시점을 회전할 수 있습니다.</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_ZOOM_TILT_ROTATE" Language="ko_KR"><Text>줌, 틸트, 회전</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP" Language="ko_KR"><Text>확대 한계</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_DESCRIPTION" Language="ko_KR"><Text>게임의 가장 가까운 시점을 1x로 보고, 추가된 6단계로 얼마나 더 가까이 갈 수 있는지 설정합니다. 7x에서는 유닛을 가까이서 볼 수 있습니다. 18x에서는 유닛이 화면을 가득 채웁니다. 게임 카메라가 허용하는 최대치인 36x에서는 칼날 하나까지 보이고 지면은 흐려집니다. 변경 사항은 바로 적용됩니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="ko_KR"><Text>가까이 (7x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="ko_KR"><Text>훨씬 가까이 (18x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="ko_KR"><Text>최대 (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="ko_KR"><Text>{1_Num}°</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="ko_KR"><Text>회전 단위</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="ko_KR"><Text>회전 키나 카메라 패널의 회전 버튼을 한 번 누를 때 시점이 회전하는 정도입니다. 다시 회전하거나 원래대로 되돌릴 때까지 시점은 그 방향을 유지합니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP" Language="ko_KR"><Text>기울기 단위</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP_DESCRIPTION" Language="ko_KR"><Text>기울기 키나 카메라 패널의 기울기 버튼을 한 번 누를 때, 바로 아래를 내려다보는 각도와 지평선을 바라보는 각도 사이에서 카메라가 기울어지는 정도입니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS" Language="ko_KR"><Text>화면에 카메라 다이얼 표시</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS_DESCRIPTION" Language="ko_KR"><Text>왼쪽 위의 승리와 일지 아래에 작은 줌 게이지, 나침반, 기울기 게이지를 반투명 배경과 함께 표시합니다. 줌 게이지를 따라 드래그하면 줌하고, 나침반 주위를 드래그하면 시점을 회전하고, 기울기 게이지를 따라 드래그하면 카메라를 기울입니다. 화면이나 팝업이 열려 있는 동안에는 숨겨집니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM" Language="ko_KR"><Text>화면 줌 게이지</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM_DESCRIPTION" Language="ko_KR"><Text>화면의 다이얼에 줌 게이지를 표시합니다. 게이지를 따라 드래그하면 줌합니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS" Language="ko_KR"><Text>화면 나침반</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS_DESCRIPTION" Language="ko_KR"><Text>화면의 다이얼에 나침반을 표시합니다. 나침반 주위를 드래그하면 시점을 회전합니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE" Language="ko_KR"><Text>화면 기울기 게이지</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE_DESCRIPTION" Language="ko_KR"><Text>화면의 다이얼에 기울기 게이지를 표시합니다. 게이지를 따라 드래그하면 카메라를 기울입니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS" Language="ko_KR"><Text>카메라 키</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_DESCRIPTION" Language="ko_KR"><Text>카메라를 기울이고, 시점을 회전하고, 원래대로 되돌리고, 카메라 패널을 여는 키입니다. 기본값은 Shift+방향키, 0, C입니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_OPEN" Language="ko_KR"><Text>키 변경</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_TITLE" Language="ko_KR"><Text>카메라 키</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_INTRO" Language="ko_KR"><Text>'변경'을 누른 다음 원하는 키를 누르세요. Ctrl, Alt(Mac에서는 Option), Shift를 함께 눌러 조합할 수 있습니다. Esc를 누르면 입력 대기를 멈춥니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CHANGE" Language="ko_KR"><Text>변경</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CLEAR" Language="ko_KR"><Text>지우기</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_RESET" Language="ko_KR"><Text>키 초기화</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_WAITING" Language="ko_KR"><Text>키를 누르세요…</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_NONE" Language="ko_KR"><Text>없음</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_UP" Language="ko_KR"><Text>지평선 쪽으로 기울이기</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_DOWN" Language="ko_KR"><Text>바로 아래쪽으로 기울이기</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_LEFT" Language="ko_KR"><Text>왼쪽으로 회전</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_RIGHT" Language="ko_KR"><Text>오른쪽으로 회전</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_BACK_TO_NORMAL" Language="ko_KR"><Text>원래대로</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_PANEL" Language="ko_KR"><Text>카메라 패널 열기/닫기</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_CAMERA_BUTTON" Language="ko_KR"><Text>카메라: 줌, 기울기, 방향</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ANGLE" Language="ko_KR"><Text>기울기</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_KEYS_TIP" Language="ko_KR"><Text>회전, 기울기, 원래대로 되돌리기, 이 패널의 키를 확인하고 변경합니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_HEADING" Language="ko_KR"><Text>방향</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ANGLE_FROM_DOWN" Language="ko_KR"><Text>{1_Num}° (바로 아래 기준)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_DOWN" Language="ko_KR"><Text>바로 아래쪽으로 {1_Num}° 더 기울입니다. 누르고 있으면 계속 기울입니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_UP" Language="ko_KR"><Text>지평선 쪽으로 {1_Num}° 더 기울입니다. 누르고 있으면 계속 기울입니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_LEFT" Language="ko_KR"><Text>왼쪽으로 {1_Num}° 회전합니다. 누르고 있으면 계속 회전합니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_RIGHT" Language="ko_KR"><Text>오른쪽으로 {1_Num}° 회전합니다. 누르고 있으면 계속 회전합니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_COMPASS" Language="ko_KR"><Text>나침반 주위를 드래그하면 시점을 회전합니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_GAUGE" Language="ko_KR"><Text>게이지를 따라 드래그하면 카메라를 기울입니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ZOOM" Language="ko_KR"><Text>줌</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_CLOSER" Language="ko_KR"><Text>{1_Num}배 확대</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_FAR" Language="ko_KR"><Text>평소보다 멀리</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_NORMAL" Language="ko_KR"><Text>기본 줌</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_GAUGE" Language="ko_KR"><Text>게이지를 따라 드래그하면 줌합니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_IN" Language="ko_KR"><Text>한 단계 확대합니다. 누르고 있으면 계속 확대합니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_OUT" Language="ko_KR"><Text>한 단계 축소합니다. 누르고 있으면 계속 축소합니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL" Language="ko_KR"><Text>원래대로</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL_TIP" Language="ko_KR"><Text>북쪽을 향하고, 게임 기본 각도를 사용하며, 게임의 줌 범위 안으로 돌아옵니다.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH" Language="ko_KR"><Text>북쪽 방향</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_EAST" Language="ko_KR"><Text>북동쪽 방향</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_EAST" Language="ko_KR"><Text>동쪽 방향</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_EAST" Language="ko_KR"><Text>남동쪽 방향</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH" Language="ko_KR"><Text>남쪽 방향</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_WEST" Language="ko_KR"><Text>남서쪽 방향</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_WEST" Language="ko_KR"><Text>서쪽 방향</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_WEST" Language="ko_KR"><Text>북서쪽 방향</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_OPTION" Language="ko_KR"><Text>Option</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ALT" Language="ko_KR"><Text>Alt</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CTRL" Language="ko_KR"><Text>Ctrl</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SHIFT" Language="ko_KR"><Text>Shift</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CMD" Language="ko_KR"><Text>Cmd</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_WIN" Language="ko_KR"><Text>Win</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SPACE" Language="ko_KR"><Text>스페이스</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ESC" Language="ko_KR"><Text>Esc</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_BACKSPACE" Language="ko_KR"><Text>Backspace</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ENTER" Language="ko_KR"><Text>Enter</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_TAB" Language="ko_KR"><Text>Tab</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_NUMPAD" Language="ko_KR"><Text>숫자 키패드 {1_Key}</Text></Replace>
+    </LocalizedText>
+</Database>

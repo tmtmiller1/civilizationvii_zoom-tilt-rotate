@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_ZOOM_TILT_ROTATE_NAME" Language="pl_PL"><Text>Zoom, pochylenie i obrót</Text></Replace>
+        <Replace Tag="LOC_MOD_ZOOM_TILT_ROTATE_DESCRIPTION" Language="pl_PL"><Text>Przybliżaj i oddalaj kamerę bardziej, niż pozwala gra, pochylaj ją od widoku prosto z góry aż po widok na horyzont i obracaj widok w dowolnym kierunku.</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_ZOOM_TILT_ROTATE" Language="pl_PL"><Text>Zoom, pochylenie i obrót</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP" Language="pl_PL"><Text>Jak blisko możesz przybliżyć</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_DESCRIPTION" Language="pl_PL"><Text>Jak daleko sześć dodatkowych stopni przybliżenia zabiera cię poza najbliższy widok gry, który liczy się jako 1x. Przy 7x widzisz jednostkę z bliska. Przy 18x jednostka wypełnia ekran. Przy 36x, czyli najwięcej, na ile pozwala kamera gry, zobaczysz pojedyncze ostrze miecza, a teren się rozmywa. Zmiany działają od razu.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="pl_PL"><Text>Bliżej (7x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="pl_PL"><Text>Dużo bliżej (18x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="pl_PL"><Text>Maksymalnie (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="pl_PL"><Text>{1_Num}°</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="pl_PL"><Text>Krok obrotu</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="pl_PL"><Text>O ile obraca widok jedno naciśnięcie klawisza obrotu albo przycisków obrotu w panelu kamery. Widok zostaje zwrócony w tę stronę, dopóki znów go nie obrócisz albo nie wrócisz do normalnego widoku.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP" Language="pl_PL"><Text>Krok pochylenia</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_ANGLE_STEP_DESCRIPTION" Language="pl_PL"><Text>O ile jedno naciśnięcie klawisza pochylenia albo przycisków pochylenia w panelu kamery pochyla kamerę między widokiem prosto z góry a widokiem na horyzont.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS" Language="pl_PL"><Text>Pokazuj wskaźniki kamery na ekranie</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_SHOW_DIALS_DESCRIPTION" Language="pl_PL"><Text>Pokazuje w lewym górnym rogu, pod zwycięstwami i dziennikiem, mały wskaźnik przybliżenia, kompas i wskaźnik pochylenia na półprzezroczystym tle. Przeciągnij wzdłuż wskaźnika przybliżenia, żeby przybliżać, wokół kompasu, żeby obracać widok, i wzdłuż wskaźnika pochylenia, żeby go pochylać. Usuwają się na bok, gdy otwarty jest jakiś ekran albo okno.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM" Language="pl_PL"><Text>Wskaźnik przybliżenia na ekranie</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ZOOM_DESCRIPTION" Language="pl_PL"><Text>Pokazuje wskaźnik przybliżenia wśród wskaźników na ekranie. Przeciągnij wzdłuż niego, żeby przybliżać.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS" Language="pl_PL"><Text>Kompas na ekranie</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_COMPASS_DESCRIPTION" Language="pl_PL"><Text>Pokazuje kompas wśród wskaźników na ekranie. Przeciągnij wokół niego, żeby obracać widok.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE" Language="pl_PL"><Text>Wskaźnik pochylenia na ekranie</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DIAL_ANGLE_DESCRIPTION" Language="pl_PL"><Text>Pokazuje wskaźnik pochylenia wśród wskaźników na ekranie. Przeciągnij wzdłuż niego, żeby pochylać kamerę.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS" Language="pl_PL"><Text>Klawisze kamery</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_DESCRIPTION" Language="pl_PL"><Text>Klawisze, które pochylają kamerę, obracają widok, przywracają normalny widok i otwierają panel kamery. Domyślnie to Shift ze strzałkami, 0 i C.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEYS_OPEN" Language="pl_PL"><Text>Zmień klawisze</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_TITLE" Language="pl_PL"><Text>Klawisze kamery</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_INTRO" Language="pl_PL"><Text>Naciśnij Zmień, a potem wybrane klawisze, przytrzymując z nimi dowolnie Ctrl, Alt (Option na Macu) i Shift. Esc przerywa czekanie.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CHANGE" Language="pl_PL"><Text>Zmień</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_CLEAR" Language="pl_PL"><Text>Wyczyść</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_RESET" Language="pl_PL"><Text>Resetuj klawisze</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_WAITING" Language="pl_PL"><Text>Naciśnij klawisze…</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEYS_NONE" Language="pl_PL"><Text>Brak</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_UP" Language="pl_PL"><Text>Pochyl w stronę horyzontu</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TILT_DOWN" Language="pl_PL"><Text>Pochyl w stronę widoku z góry</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_LEFT" Language="pl_PL"><Text>Obróć w lewo</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_TURN_RIGHT" Language="pl_PL"><Text>Obróć w prawo</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_BACK_TO_NORMAL" Language="pl_PL"><Text>Przywróć normalny widok</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_PANEL" Language="pl_PL"><Text>Otwórz lub zamknij panel kamery</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_CAMERA_BUTTON" Language="pl_PL"><Text>Kamera: przybliżenie, pochylenie i kierunek</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ANGLE" Language="pl_PL"><Text>Pochylenie</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_KEYS_TIP" Language="pl_PL"><Text>Zobacz klawisze do obracania, pochylania, przywracania normalnego widoku i tego panelu, i zmień je.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_HEADING" Language="pl_PL"><Text>Kierunek</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ANGLE_FROM_DOWN" Language="pl_PL"><Text>{1_Num}° (od widoku z góry)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_DOWN" Language="pl_PL"><Text>Patrz o {1_Num}° bardziej z góry. Przytrzymaj, żeby kontynuować.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TILT_UP" Language="pl_PL"><Text>Patrz o {1_Num}° bardziej w stronę horyzontu. Przytrzymaj, żeby kontynuować.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_LEFT" Language="pl_PL"><Text>Obróć o {1_Num}° w lewo. Przytrzymaj, żeby dalej obracać.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_TURN_RIGHT" Language="pl_PL"><Text>Obróć o {1_Num}° w prawo. Przytrzymaj, żeby dalej obracać.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_COMPASS" Language="pl_PL"><Text>Przeciągnij wokół kompasu, żeby obrócić widok.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_GAUGE" Language="pl_PL"><Text>Przeciągnij wzdłuż wskaźnika, żeby pochylić kamerę.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_PANEL_ZOOM" Language="pl_PL"><Text>Przybliżenie</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_CLOSER" Language="pl_PL"><Text>{1_Num}x bliżej</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_FAR" Language="pl_PL"><Text>Bardzo daleko</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_ZOOM_NORMAL" Language="pl_PL"><Text>Normalne przybliżenie</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_GAUGE" Language="pl_PL"><Text>Przeciągnij wzdłuż wskaźnika, żeby przybliżyć lub oddalić.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_IN" Language="pl_PL"><Text>Przybliż o jeden stopień. Przytrzymaj, żeby dalej przybliżać.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_TIP_ZOOM_OUT" Language="pl_PL"><Text>Oddal o jeden stopień. Przytrzymaj, żeby dalej oddalać.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL" Language="pl_PL"><Text>Normalny widok</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_BACK_TO_NORMAL_TIP" Language="pl_PL"><Text>Zwróć widok na północ, użyj pochylenia z gry i wróć do zakresu przybliżenia gry.</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH" Language="pl_PL"><Text>Widok na północ</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_EAST" Language="pl_PL"><Text>Widok na północny wschód</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_EAST" Language="pl_PL"><Text>Widok na wschód</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_EAST" Language="pl_PL"><Text>Widok na południowy wschód</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH" Language="pl_PL"><Text>Widok na południe</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_SOUTH_WEST" Language="pl_PL"><Text>Widok na południowy zachód</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_WEST" Language="pl_PL"><Text>Widok na zachód</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_FACING_NORTH_WEST" Language="pl_PL"><Text>Widok na północny zachód</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_OPTION" Language="pl_PL"><Text>Option</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ALT" Language="pl_PL"><Text>Alt</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CTRL" Language="pl_PL"><Text>Ctrl</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SHIFT" Language="pl_PL"><Text>Shift</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_CMD" Language="pl_PL"><Text>Cmd</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_WIN" Language="pl_PL"><Text>Win</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_SPACE" Language="pl_PL"><Text>Spacja</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ESC" Language="pl_PL"><Text>Esc</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_BACKSPACE" Language="pl_PL"><Text>Backspace</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_ENTER" Language="pl_PL"><Text>Enter</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_TAB" Language="pl_PL"><Text>Tab</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_KEY_NAME_NUMPAD" Language="pl_PL"><Text>Num {1_Key}</Text></Replace>
+    </LocalizedText>
+</Database>

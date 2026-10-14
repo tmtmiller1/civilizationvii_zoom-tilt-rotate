@@ -1,7 +1,7 @@
-// Prints ui/better-zoom.js as code that can be pasted into `tower-bench eval`, for trying an edit in a running game
+// Prints ui/zoom-tilt-rotate.js as code that can be pasted into `tower-bench eval`, for trying an edit in a running game
 // without restarting it. Static imports become dynamic ones so the file can run inside an async function.
 //
-//   node devtools/inject.mjs ui/better-zoom.js > /tmp/payload.js
+//   node devtools/inject.mjs ui/zoom-tilt-rotate.js > /tmp/payload.js
 //   node ../../tools/tower-bench/tower-bench.mjs eval "$(cat /tmp/payload.js)"
 //
 // Load it once per UI load: a second paste wraps the camera functions a second time.
