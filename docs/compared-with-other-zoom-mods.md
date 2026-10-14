@@ -1,15 +1,14 @@
 # Compared with other zoom mods
 
-Before Zoom, Tilt, & Rotate, I tried the two zoom mods already on the Workshop. Neither got close enough or far enough
-to be worth it, and neither let me tip the camera or turn it to face east, south or west and leave it there. One of them
-explained its limits as limits of the game engine: the close-up snaps back because the engine forces it, and the camera
-can't be turned to a heading because the engine won't report or set one. I took that at face value for a while. Then I
-tested it, and none of it held up. The engine holds a narrow lens for as long as you like, it takes a field of view
-anywhere from 1 to 120 degrees, and it reports the camera's heading and holds any heading you give it. The limits were
-in the mods.
+Before building Zoom, Tilt, & Rotate, I tested the two zoom mods already on the Workshop. Each does some things well
+(see the end of its section), but neither went as far in or out as I wanted, and neither let you set the camera angle or
+keep a heading other than north. One of them described its limits as limits of the game engine: that the engine forces
+the close-up to snap back, and that it can't report or set a heading. So I measured the engine. It holds a narrow lens
+for as long as you like, takes a field of view anywhere from 1 to 120 degrees, and reports and holds any heading you
+give it.
 
-This page is what I measured. The other mods aren't named; they're Mod A and Mod B. The point isn't to knock anyone's
-work, it's that "the engine can't" was said in public, players believed it, and it isn't true.
+This page is what I measured. The other mods aren't named; they're Mod A and Mod B. It's meant as a reference for what
+each mod does and what the engine allows, not a knock on anyone's work.
 
 ## How it was tested
 
@@ -69,9 +68,8 @@ avoided.
 its range and Mod A doesn't touch the tilt. The engine's tilt call takes anything from straight down to 80 degrees
 toward the horizon and holds it.
 
-Mod B didn't blame the engine, but it ends up in the same place: one step past each end, a 15-degree close-up, and
-no way to set the angle or keep a heading. I wrote to its author with encouragement, some questions and the problems
-I'd found, and never got a reply. Its problems are below.
+Mod B doesn't make any claims about the engine. It's a small, tidy mod that goes one step past each end, to a 15-degree
+close-up, without a way to set the angle or keep a heading. Its problems are below.
 
 ## Other problems found
 

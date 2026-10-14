@@ -136,15 +136,15 @@ it. You can drag them to set the camera, and they hide while a screen or popup i
 
 ## Why another zoom mod
 
-I tried the existing zoom mods first. The closest any of them got was about 2.3 times closer than the game, the close-up
-in one of them let go after a few seconds, and none let me set the camera's angle or turn it to face other directions
-and stay put. One of them blamed the engine: it said the close-up snaps back because the engine forces it, and that the
-engine can't report or set a heading. I tested that, and it's not true. The engine holds a narrow lens indefinitely,
-accepts a field of view from 1 to 120 degrees, and reports and holds any heading and any angle from straight down to 80
-degrees. The other mod never gave a reason and its author didn't answer when I wrote to them, but it stopped short in
-the same way. On examination, the limits were in the mods, and it was frustrating to see players told otherwise. This
-mod zooms up to 36 times closer than the game (7 times by default; you can change it in Options), zooms out until the
-camera looks straight down, and lets you set the angle and direction yourself.
+Before building this, I tested the zoom mods already on the Workshop. The closest any of them got was about 2.3 times
+closer than the game, one let go of its close-up after a few seconds, and neither let you set the camera angle or keep a
+heading other than north. One of them put this down to the engine: that it forces the close-up to snap back, and that it
+can't report or set a heading.
+
+So I measured what the engine actually does. It holds a narrow lens for as long as you like, accepts a field of view
+from 1 to 120 degrees, and reports and holds any heading and any angle from straight down to 80 degrees. That's the room
+this mod works in: up to 36 times closer than the game (7 times by default; you can change it in Options), out until the
+camera looks straight down, and any angle and direction you like.
 
 The measurements, side by side with the other mods (not named), are in
 [docs/compared-with-other-zoom-mods.md](docs/compared-with-other-zoom-mods.md).
