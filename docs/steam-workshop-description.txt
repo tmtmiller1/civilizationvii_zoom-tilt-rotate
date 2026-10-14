@@ -1,4 +1,3 @@
-[h1]Zoom, Tilt, & Rotate[/h1]
 [b]Zoom up to 36 times closer than the game, zoom out to a top-down view of the map, and tilt and turn the camera to face any direction. No snap-back: your close-up holds for as long as you want it.[/b]
 
 [b]Version 1.0.0. Compatible with Civilization VII 1.5.0.[/b]
@@ -36,16 +35,35 @@ You control the camera's zoom (how close or far it is), angle (how steeply it lo
 [*][b]City screens.[/b] The buy-tile and place-building screens show the city the way the game normally does, even if you opened them from a close-up, and put your view back when they close.
 [*][b]The game moving the camera.[/b] When the game moves the camera to a new zoom (a notification, a tutorial step), its own lens comes back as the camera arrives. When it jumps to your next unit without changing the zoom, you stay in your close-up.
 [/list]
-[h2]Why another zoom mod[/h2]
-Before building this, I tested the zoom mods already on the Workshop. The closest any of them got was about 2.3 times closer than the game, one let go of its close-up after a few seconds, and neither let you set the camera angle or keep a heading other than north. One of them put this down to the engine: that it forces the close-up to snap back, and that it can't report or set a heading. So I measured what the engine actually does. It holds a narrow lens for as long as you like, accepts a field of view from 1 to 120 degrees, and reports and holds any heading and any angle from straight down to 80 degrees. That's the room this mod works in, and it uses all of it. The measurements, side by side with the other mods (not named), are [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate/blob/main/docs/compared-with-other-zoom-mods.md]on GitHub[/url].
+[h2]Why I made it[/h2]
+Before building this, I tested the zoom mods already on the Workshop. The closest any of them got was about 2.3 times closer than the game, one let go of its close-up after 4 seconds, and neither let you set the camera angle or keep a heading other than north. One of them put this down to the engine: that it forces the close-up to snap back, and that it can't report or set a heading.
+
+I measured what the engine actually does:
+[list]
+[*][b]The snap-back is a timer in the mod[/b], not the engine. Raise that mod's own hold setting to 20 seconds and the close-up holds 20 seconds. Without a timer, a narrow lens holds for as long as you leave it.
+[*][b]The engine takes a field of view from 1 to 120 degrees[/b] and holds every value in between. The 25-degree floor that mod stops at is a constant in its own code.
+[*][b]The camera reports its heading[/b] in the same state the mod already reads its zoom from, and the engine's rotate call holds any heading you give it.
+[*][b]The engine's tilt call holds any angle[/b] from straight down to 80 degrees toward the horizon.
+[/list]
+That's the room this mod works in, and it uses all of it.
+
+[table]
+[tr][th][/th][th]Unmodded[/th][th]Mod A[/th][th]Mod B[/th][th]Zoom, Tilt, & Rotate[/th][/tr]
+[tr][td]Closest lens[/td][td]35°[/td][td]25°, for 4 seconds[/td][td]15°[/td][td]5°, 2° or 1° (7x, 18x or 36x closer)[/td][/tr]
+[tr][td]Farthest lens[/td][td]35°[/td][td]60°, for 4 seconds[/td][td]60°[/td][td]90°, looking straight down[/td][/tr]
+[tr][td]Close-up holds[/td][td]—[/td][td]no[/td][td]yes[/td][td]yes[/td][/tr]
+[tr][td]Trackpad swipe keeps the close-up[/td][td]—[/td][td]no[/td][td]no[/td][td]yes[/td][/tr]
+[tr][td]Gamepad trigger zooms[/td][td]yes[/td][td]no[/td][td]yes[/td][td]yes[/td][/tr]
+[tr][td]Set the camera angle[/td][td]—[/td][td]no[/td][td]no[/td][td]0 to 80°, held[/td][/tr]
+[tr][td]Face any heading and keep it[/td][td]—[/td][td]no, swings back to north[/td][td]no[/td][td]yes[/td][/tr]
+[/table]
+Measured in game 1.5.0 with every other mod off, using real macOS input. The full write-up, with pan speeds, city screens and the other problems found, is [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate/blob/main/docs/compared-with-other-zoom-mods.md]on GitHub[/url].
 [h2]Known limitations[/h2]
 [list]
-[*][b]Tested on a Mac trackpad and keyboard.[/b] The mouse wheel, gamepad and touch screen were tested with simulated input, not real hardware yet. Reports from Windows and from a mouse or controller are welcome.
+[*][b]Tested on a Mac trackpad and keyboard.[/b] The mouse wheel, gamepad and touch screen were tested with simulated input, not real hardware yet.
 [*][b]On a Mac trackpad,[/b] zoom with a two-finger scroll. A pinch hasn't zoomed the game in testing.
 [*][b]Yield badges[/b] keep their full size in the close-up, so at 5 degrees and closer they cover much of the city.
-[*][b]A notch at the very start of one of the game's own camera moves[/b] can cut that move short, as in the unmodded game.
-[*][b]Alt (Option on a Mac)[/b] is the game's own camera key, so the default keys use Shift instead.
-[*][b]Use it on its own[/b] rather than alongside another zoom or camera mod; two mods driving the camera at once will fight over it.
+[*][b]Use it on its own,[/b] not alongside another zoom or camera mod.
 [*][b]Translations are machine-made;[/b] corrections are welcome. English, German, Spanish, French, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Russian, Simplified and Traditional Chinese.
 [/list]
 [h2]Compatibility[/h2]
@@ -55,11 +73,9 @@ Before building this, I tested the zoom mods already on the Workshop. The closes
 [/list]
 [h2]Source and documentation[/h2]
 [list]
-[*]Open source on GitHub: [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate]source and full documentation[/url], and the [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate/releases]release notes[/url].
+[*]Open source on GitHub: [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate]source and full documentation[/url].
 [*]This version: [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate/releases/tag/v1.0.0]Zoom, Tilt, & Rotate 1.0.0[/url], with the zip for a manual install.
 [/list]
-[h2]For modders[/h2]
-This mod is developed with [url=https://github.com/tmtmiller1/civilizationvii_tower-bench]Tower Bench[/url], a free, open-source test bench for macOS to make it easier to create Civilization VII mods.
 [h2]Credits[/h2]
 [list]
 [*][b]Tower[/b], for design and Civilization VII implementation.
