@@ -12,7 +12,7 @@ a fallback for a language file that's missing a line.
 | `en_us/ModText.xml` | The English source. |
 | `<lang>/ModText.xml` | The same tags in one language: `de_de`, `es_es`, `fr_fr`, `it_it`, `ja_jp`, `ko_kr`, `pl_pl`, `pt_br`, `ru_ru`, `zh_cn` (Simplified, `zh_Hans_CN`) and `zh_hk` (Traditional, `zh_Hant_HK`). |
 
-The eleven languages are machine translations that use the game's own words for its terms (Options, Add-ons, the
+The eleven languages are translations that use the game's own words for its terms (Options, Add-ons, the
 minimap, the journal), taken from the game's l10n files. To correct one, edit its `<Text>`; to change the English,
 edit the English and update every language. A new language needs no code change: add its file here and a line for
 it in both `UpdateText` lists in `zoom-tilt-rotate.modinfo`.

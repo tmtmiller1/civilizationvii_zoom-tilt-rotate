@@ -64,7 +64,7 @@ Measured in game 1.5.0 with every other mod off, using real macOS input. The ful
 [*][b]On a Mac trackpad,[/b] zoom with a two-finger scroll. A pinch hasn't zoomed the game in testing.
 [*][b]Yield badges[/b] keep their full size in the close-up, so at 5 degrees and closer they cover much of the city.
 [*][b]Use it on its own,[/b] not alongside another zoom or camera mod.
-[*][b]Translations are machine-made;[/b] corrections are welcome. English, German, Spanish, French, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Russian, Simplified and Traditional Chinese.
+[*][b]Translations:[/b] corrections are welcome. English, German, Spanish, French, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Russian, Simplified and Traditional Chinese.
 [/list]
 [h2]Compatibility[/h2]
 [list]

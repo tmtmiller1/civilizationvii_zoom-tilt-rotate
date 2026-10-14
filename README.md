@@ -26,7 +26,7 @@ zoom to the game's normal range.
 - **The buy-tile and place-building screens** show the city the way the game normally does, then put your view back
   when you close them.
 
-Use the mouse wheel, a trackpad, the keyboard, a gamepad or touch. The text is machine translated into 12 languages.
+Use the mouse wheel, a trackpad, the keyboard, a gamepad or touch. The text is translated into 12 languages.
 
 <p>
   <img src="docs/screenshots/03-close-up-36x.jpg" alt="The palace globe at 36 times closer than the game" width="49%">
