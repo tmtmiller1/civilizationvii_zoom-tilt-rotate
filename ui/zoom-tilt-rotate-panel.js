@@ -9,6 +9,7 @@
 
 import ViewManager from "/core/ui/views/view-manager.js";
 import { ContextManager } from "/core/ui/context-manager/context-manager.js";
+import LensManager, { LensLayerEnabledEventName, LensLayerDisabledEventName } from "/core/ui/lenses/lens-manager.js";
 import {
   getTurnStep, getAngleStep, getShowDials, getDialOnScreen, localized as loc, SCREEN_DIALS, SETTINGS_CHANGED_EVENT
 } from "/tmt-zoom-tilt-rotate/ui/zoom-tilt-rotate-settings.js";
@@ -301,6 +302,36 @@ function panelSection(titleTag, titleText, [minus, dial, plus], control) {
   return { value, parts: [sectionTitle(titleTag, titleText), dialRow(minus, dial, plus), value, control] };
 }
 
+// The minimap's own Resources and Yields checkboxes, here too: the same words, and the same switches the minimap and
+// the game's hotkeys use, so they always agree. Handy for a clear view of the land at a low angle.
+const MAP_LAYERS = [["LOC_UI_MINI_MAP_RESOURCE", "Resources", "fxs-resource-layer"],
+  ["LOC_UI_MINI_MAP_YIELDS", "Yields", "fxs-yields-layer"]];
+
+function layerCheckbox([tag, fallback, layerType]) {
+  const checkbox = element("fxs-checkbox", "mr-2");
+  checkbox.setAttribute("selected", String(LensManager.isLayerEnabled(layerType)));
+  checkbox.addEventListener("component-value-changed", (event) => {
+    const on = !!event.detail?.value;
+    if (LensManager.isLayerEnabled(layerType) !== on) {
+      LensManager.toggleLayer(layerType, { force: on, serialize: true });
+    }
+  });
+  const item = element("div", "flex flex-row items-center pointer-events-auto");
+  item.style.margin = "0 0.7rem";
+  item.append(checkbox, element("div", "text-accent-2 text-base font-body", loc(tag, fallback)));
+  item.update = () => checkbox.setAttribute("selected", String(LensManager.isLayerEnabled(layerType)));
+  return item;
+}
+
+function mapLayerRow() {
+  const items = MAP_LAYERS.map(layerCheckbox);
+  const row = element("div", "flex flex-row items-center justify-center");
+  row.style.marginTop = "0.8rem";
+  row.append(...items);
+  row.update = () => items.forEach((item) => item.update());
+  return row;
+}
+
 // Back to normal and Camera keys side by side under a thin gold rule.
 function panelFooter() {
   const normal = backToNormalButton();
@@ -362,9 +393,10 @@ function buildPanel() {
     roundButton("tiltUp", loc("LOC_ZOOM_TILT_ROTATE_TIP_TILT_UP", `Look ${angleStep}° more toward the horizon. Hold to keep going.`, angleStep), "+")
   ], angleSlider);
 
+  const layers = mapLayerRow();
   const body = element("div");
   body.style.cssText = "display:flex;flex-direction:column;";
-  body.append(...zoom.parts, ...heading.parts, ...angle.parts, panelFooter());
+  body.append(...zoom.parts, ...heading.parts, ...angle.parts, layers, panelFooter());
   const box = panelBox();
   box.insertBefore(body, box.firstChild);
 
@@ -378,6 +410,7 @@ function buildPanel() {
     angle.value.textContent = angleText();
     headingSlider.show(view.heading);
     angleSlider.show(view.shownAngle);
+    layers.update();
   };
   return box;
 }
@@ -532,6 +565,11 @@ try {
     hud?.refresh();
   });
   window.addEventListener("zoom-tilt-rotate-panel-toggle", () => togglePanel());
+  // The minimap's checkboxes or the hotkeys switched a layer.
+  const shownLayers = MAP_LAYERS.map(([, , layerType]) => layerType);
+  for (const name of [LensLayerEnabledEventName, LensLayerDisabledEventName]) {
+    window.addEventListener(name, (event) => shownLayers.includes(event.detail?.layer) && panel?.refresh());
+  }
   window.addEventListener(SETTINGS_CHANGED_EVENT, () => {
     shownDials = dialsOnScreen();
     keepHud();

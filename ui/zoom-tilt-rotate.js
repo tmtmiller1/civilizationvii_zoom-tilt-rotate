@@ -11,6 +11,7 @@ import {
   HOLD_MS, currentView, easeView, endGlide, isTurned, measureAngle, onViewMoved, resetView, setAngle,
   setFarOutShare, setHeading, startGlide, stepBy
 } from "/tmt-zoom-tilt-rotate/ui/zoom-tilt-rotate-view.js";
+import "/tmt-zoom-tilt-rotate/ui/zoom-tilt-rotate-icons.js";
 
 // The game's zoom runs from 0 (closest) to 1 (farthest). Past either end we keep
 // going by changing the field of view instead, so requestedZoom runs from

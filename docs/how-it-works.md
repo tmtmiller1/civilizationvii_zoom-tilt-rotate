@@ -36,6 +36,14 @@ editor.
   at any lens: about 1.56 screens per half second near the ground and 0.8 to 1.0 far out, against the game's own
   1.56 and 0.80. The map wraps east to west, so a pan measured from start to end reads wrong once it crosses the
   seam; the in-game checks add up the movement frame by frame.
+- The game draws resource icons at one size on screen wherever their tile is (`SpriteMode.FixedBillboard`), and
+  yield icons in the world (`SpriteMode.Billboard`), so yields shrink with distance and resources don't. Its
+  city-growth lens draws resource icons in the world too, at scale 1 for the resource layer's 42 pixels and with
+  offsets scaled by 16/42. `ui/zoom-tilt-rotate-icons.js` gives each of the resource layer's two sprite grids a twin
+  drawn that way: every call the layer makes reaches both, and only one is shown. The game never tilts the camera
+  itself, so whenever the tilt weight is above 0 the world twin shows, sized each frame to 0.00085 times the distance
+  from the camera to the middle of the screen, times the lens's tan(fov / 2) over the game's. That keeps the icon in
+  the middle of the screen at the game's size. The 0.00085 was measured in game by matching the two side by side.
 - The game's page never sets the modifier flags on a key event, but the modifier keys arrive as key events of their
   own, so the mod tracks which are held. The game ignores the arrow keys while a modifier is held.
 - The game frames a city screen from the lens that's on screen, and a lens change takes a moment to ease in. So when

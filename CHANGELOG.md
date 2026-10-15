@@ -2,6 +2,14 @@
 
 All notable changes to Zoom, Tilt, & Rotate are documented here. This project follows semantic versioning.
 
+## [1.1.0] - 2026-10-15
+
+- Tipped toward the horizon, the resource icons now get smaller with distance instead of piling up along the far
+  edge of the map. They're drawn the way the game draws them in its city-growth lens, and the ones in the middle of
+  the screen keep the game's size. At the game's own angle nothing changes.
+- The camera panel has the minimap's Resources and Yields checkboxes. They switch the same layers as the minimap and
+  the game's hotkeys, so all three always agree.
+
 ## [1.0.1] - 2026-10-14
 
 - The license now says that Civilization VII and its art and data belong to Firaxis and 2K. The mod itself plays

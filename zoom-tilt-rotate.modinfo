@@ -4,7 +4,7 @@
         <Name>LOC_MOD_ZOOM_TILT_ROTATE_NAME</Name>
         <Description>LOC_MOD_ZOOM_TILT_ROTATE_DESCRIPTION</Description>
         <Authors>Tower</Authors>
-        <Version>1.0.1</Version>
+        <Version>1.1.0</Version>
         <AffectsSavedGames>0</AffectsSavedGames>
     </Properties>
     <Dependencies>
@@ -66,6 +66,7 @@
                     <Item>ui/zoom-tilt-rotate-settings.js</Item>
                     <Item>ui/zoom-tilt-rotate-keys-editor.js</Item>
                     <Item>ui/zoom-tilt-rotate-view.js</Item>
+                    <Item>ui/zoom-tilt-rotate-icons.js</Item>
                     <Item>icons/camera.png</Item>
                     <Item>icons/turn-left.png</Item>
                     <Item>icons/turn-right.png</Item>

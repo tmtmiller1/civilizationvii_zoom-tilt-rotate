@@ -92,6 +92,10 @@ Zoom with the mouse wheel, a two-finger scroll on a trackpad, the gamepad trigge
   then it swings back to north, as in the unmodded game. The panel and gauges follow it.
 - **Panning follows the screen.** With the view turned, the arrow keys, the screen edge and a gamepad still move the
   map left, right, up and down as you see it.
+- **Map icons at your angle.** Once you tip or zoom the camera past what the game does, the resource icons get
+  smaller with distance, the way the yield icons already do, so the far side of the map doesn't turn into a wall of
+  icons. The ones in the middle of the screen stay the size the game draws them. Back at the game's own angle you
+  get the game's icons again.
 - Every change eases in over about half a second.
 
 <p>
@@ -121,7 +125,8 @@ The **camera panel** opens from the camera button next to the minimap's lens but
 - an angle gauge showing how far the camera tips
 
 Each gauge has a button on either side (click to step, hold to keep going) and a slider underneath, and you can drag
-the gauge itself. Below them are Back to normal and Camera keys, which lists the keys and lets you change them. The
+the gauge itself. Below them are the minimap's Resources and Yields checkboxes, for a clear view of the land, then
+Back to normal and Camera keys, which lists the keys and lets you change them. The
 panel uses the game's own panel style and opens beside the minimap like the lens panel.
 
 <p>

@@ -14,7 +14,7 @@ const unescape = (text) => text.replace(/&lt;/g, "<").replace(/&gt;/g, ">").repl
 
 // The game's own tags the mod borrows.
 const GAME_TAGS = new Set(["LOC_MODULE_BASE_STANDARD_NAME", "LOC_OPTIONS_CONFIRM_CHANGES", "LOC_UI_CONTENT_MGR_SUBTITLE",
-  "LOC_UI_CONTENT_MGR_SUBTITLE_DESCRIPTION"]);
+  "LOC_UI_CONTENT_MGR_SUBTITLE_DESCRIPTION", "LOC_UI_MINI_MAP_RESOURCE", "LOC_UI_MINI_MAP_YIELDS"]);
 
 function englishRows() {
   const rows = [...read("text/en_us/ModText.xml").matchAll(/<Row\s+Tag="([A-Z0-9_]+)"\s*>\s*<Text>([\s\S]*?)<\/Text>/g)];

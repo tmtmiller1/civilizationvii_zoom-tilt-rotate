@@ -1,6 +1,6 @@
 [b]Zoom up to 36 times closer than the game, zoom out to a top-down view of the map, and tilt and turn the camera to face any direction. No snap-back: your close-up holds for as long as you want it.[/b]
 
-[b]Version 1.0.1. Compatible with Civilization VII 1.5.0.[/b]
+[b]Version 1.1.0. Compatible with Civilization VII 1.5.0.[/b]
 
 You control the camera's zoom (how close or far it is), angle (how steeply it looks down) and direction (which way it faces).
 
@@ -74,7 +74,7 @@ Measured in game 1.5.0 with every other mod off, using real macOS input. The ful
 [h2]Source and documentation[/h2]
 [list]
 [*]Open source on GitHub: [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate]source and full documentation[/url].
-[*]This version: [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate/releases/tag/v1.0.1]Zoom, Tilt, & Rotate 1.0.1[/url], with the zip for a manual install.
+[*]This version: [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate/releases/tag/v1.1.0]Zoom, Tilt, & Rotate 1.1.0[/url], with the zip for a manual install.
 [/list]
 [h2]Credits[/h2]
 [list]

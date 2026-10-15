@@ -23,7 +23,9 @@ const ENGINE_GLOBALS = {
   InputActionStatuses: "readonly",
   DirectionTypes: "readonly",
   Units: "readonly",
-  Camera: "readonly"
+  Camera: "readonly",
+  SpriteMode: "readonly",
+  ResourceTypes: "readonly"
 };
 
 const BROWSER_GLOBALS = {
