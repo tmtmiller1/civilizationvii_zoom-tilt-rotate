@@ -3,11 +3,13 @@
 The game's camera zooms from 0 (closest) to 1 (farthest). The mod keeps its own zoom value that runs past both ends
 and, beyond them, changes the camera's field of view (and, going out, its tilt) instead of the zoom.
 
-`ui/zoom-tilt-rotate.js` replaces the camera controller's zoom handlers, and `ui/zoom-tilt-rotate-view.js` owns the angle
-and heading. `ui/zoom-tilt-rotate-keys.js` reads the camera keys and `ui/zoom-tilt-rotate-panel.js` draws the camera
-panel; both send commands to `zoom-tilt-rotate.js` as window events. `ui/zoom-tilt-rotate-settings.js` keeps the player's
-choices, and `ui/zoom-tilt-rotate-options.js` with `ui/zoom-tilt-rotate-keys-editor.js` are the Options rows and the key
-editor.
+`ui/zoom-tilt-rotate.js` replaces the camera controller's zoom handlers, and `ui/zoom-tilt-rotate-view.js` owns the
+angle and heading. `ui/zoom-tilt-rotate-icons.js` draws the resource icons in the world while the mod holds the camera
+at its own angle; it follows the tilt and the lens through `Camera.setTilt`, `Camera.setVerticalFoV` and
+`Camera.restoreDefaults`, which it wraps. `ui/zoom-tilt-rotate-keys.js` reads the camera keys and
+`ui/zoom-tilt-rotate-panel.js` draws the camera panel; both send commands to `zoom-tilt-rotate.js` as window events.
+`ui/zoom-tilt-rotate-settings.js` keeps the player's choices, and `ui/zoom-tilt-rotate-options.js` with
+`ui/zoom-tilt-rotate-keys-editor.js` are the Options rows and the key editor.
 
 ## What the engine allows, and how the mod works with it
 

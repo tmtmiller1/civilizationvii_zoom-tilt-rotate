@@ -11,7 +11,7 @@ You control the camera's zoom (how close or far it is), angle (how steeply it lo
 [/list]
 [h2]Zoom[/h2]
 [list]
-[*][b]Zoom in past the limit[/b] with the mouse wheel, a two-finger trackpad scroll, the gamepad triggers or a touch pinch. Set how far in Options > Add-ons > Zoom, Tilt, & Rotate: Closer (7x, the default), Much closer (18x) or All the way (36x). It's always six notches, each magnifying by the same amount, and a change takes effect immediately.
+[*][b]Zoom in past the limit[/b] with the mouse wheel, a two-finger trackpad scroll, the gamepad triggers or a touch pinch. Set how far in Options > Add-ons > Zoom, Tilt, & Rotate: Closer (7x, the default), Much closer (18x) or All the way (36x). It's always six notches, each magnifying by the same amount.
 [*][b]Zoom out past the limit[/b] and the camera widens and turns to look straight down, so you see the map instead of sky. That's also six notches.
 [*][b]Scrolling back[/b] from past either limit moves back one notch at a time instead of snapping to the game's view.
 [*][b]On a trackpad,[/b] zooming stops when your fingers stop, and lifting them doesn't zoom you back out.
@@ -21,10 +21,11 @@ You control the camera's zoom (how close or far it is), angle (how steeply it lo
 [*][b]Tap or hold.[/b] A tap moves one step and lands on a round number, so north, east, south and west are each one tap away. Holding turns or tips the camera smoothly until you let go. Set the step sizes in Options.
 [*][b]Your view stays put[/b] through zooming, panning, city screens and the game moving the camera.
 [*][b]The game's own rotate still works.[/b] Holding Alt (Option on a Mac) and dragging turns the view until you let go, then it swings back to north, as in the unmodded game.
+[*][b]Map icons at your angle.[/b] Tip the camera or zoom out past what the game does and the resource icons shrink with distance, like the yield icons, instead of piling up along the far edge of the map.
 [/list]
 [h2]Camera panel and keys[/h2]
 [list]
-[*][b]Camera panel.[/b] Open it from the camera button next to the minimap's lens button, or with Shift + C. It shows a zoom gauge, a compass and an angle gauge. Click the buttons either side to step, hold to keep going, or drag a gauge or its slider to set any value.
+[*][b]Camera panel.[/b] Open it from the camera button next to the minimap's lens button, or with Shift + C. It shows a zoom gauge, a compass and an angle gauge. Click the buttons either side to step, hold to keep going, or drag a gauge or its slider to set any value. It also has the minimap's Resources and Yields checkboxes.
 [*][b]Gauges on screen.[/b] Turn on "Show the camera dials on screen" in Options to keep the three gauges at the top left. You can drag them too, and they hide while a screen or popup is open.
 [*][b]Back to normal[/b], on the panel or Shift + 0, faces north, goes back to the game's angle and returns the zoom to the game's normal range.
 [*][b]Default keys:[/b] Shift + Up/Down for the angle, Shift + Left/Right to turn, Shift + 0 for Back to normal, Shift + C for the panel. Change any of them in Options > Add-ons > Zoom, Tilt, & Rotate > Camera keys.
@@ -33,14 +34,14 @@ You control the camera's zoom (how close or far it is), angle (how steeply it lo
 [list]
 [*][b]Panning[/b] moves the map at the same speed on screen however far in or out you are. With the view turned, the arrow keys, the screen edge and a gamepad still move the map left, right, up and down as you see it.
 [*][b]City screens.[/b] The buy-tile and place-building screens show the city the way the game normally does, even if you opened them from a close-up, and put your view back when they close.
-[*][b]The game moving the camera.[/b] When the game moves the camera to a new zoom (a notification, a tutorial step), its own lens comes back as the camera arrives. When it jumps to your next unit without changing the zoom, you stay in your close-up.
+[*][b]The game moving the camera.[/b] A move to a new zoom (a notification, a tutorial step) brings the game's lens back; a jump to your next unit keeps your close-up.
 [/list]
 [h2]Why I made it[/h2]
 Before building this, I tested the zoom mods already on the Workshop. The closest any of them got was about 2.3 times closer than the game, one let go of its close-up after 4 seconds, and neither let you set the camera angle or keep a heading other than north. One of them put this down to the engine: that it forces the close-up to snap back, and that it can't report or set a heading.
 
 I measured what the engine actually does:
 [list]
-[*][b]The snap-back is a timer in the mod[/b], not the engine. Raise that mod's own hold setting to 20 seconds and the close-up holds 20 seconds. Without a timer, a narrow lens holds for as long as you leave it.
+[*][b]The snap-back is a timer in the mod[/b], not the engine. Without a timer, a narrow lens holds for as long as you leave it.
 [*][b]The engine takes a field of view from 1 to 120 degrees[/b] and holds every value in between. The 25-degree floor that mod stops at is a constant in its own code.
 [*][b]The camera reports its heading[/b] in the same state the mod already reads its zoom from, and the engine's rotate call holds any heading you give it.
 [*][b]The engine's tilt call holds any angle[/b] from straight down to 80 degrees toward the horizon.
@@ -57,12 +58,14 @@ That's the room this mod works in, and it uses all of it.
 [tr][td]Set the camera angle[/td][td]—[/td][td]no[/td][td]no[/td][td]0 to 80°, held[/td][/tr]
 [tr][td]Face any heading and keep it[/td][td]—[/td][td]no, swings back to north[/td][td]no[/td][td]yes[/td][/tr]
 [/table]
-Measured in game 1.5.0 with every other mod off, using real macOS input. The full write-up, with pan speeds, city screens and the other problems found, is [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate/blob/main/docs/compared-with-other-zoom-mods.md]on GitHub[/url].
+Measured in game 1.5.0 with every other mod off, using real macOS input. The full write-up is [url=https://github.com/tmtmiller1/civilizationvii_zoom-tilt-rotate/blob/main/docs/compared-with-other-zoom-mods.md]on GitHub[/url].
 [h2]Known limitations[/h2]
 [list]
 [*][b]Tested on a Mac trackpad and keyboard.[/b] The mouse wheel, gamepad and touch screen were tested with simulated input, not real hardware yet.
 [*][b]On a Mac trackpad,[/b] zoom with a two-finger scroll. A pinch hasn't zoomed the game in testing.
 [*][b]Yield badges[/b] keep their full size in the close-up, so at 5 degrees and closer they cover much of the city.
+[*][b]A notch sent in the first moment[/b] of one of the game's own camera moves can cut that move short, as in the unmodded game.
+[*][b]Alt (Option on a Mac)[/b] is the game's own camera key, so the default keys use Shift instead.
 [*][b]Use it on its own,[/b] not alongside another zoom or camera mod.
 [*][b]Translations:[/b] corrections are welcome. English, German, Spanish, French, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Russian, Simplified and Traditional Chinese.
 [/list]
@@ -82,5 +85,5 @@ Measured in game 1.5.0 with every other mod off, using real macOS input. The ful
 [/list]
 [h2]Special Thanks[/h2]
 [list]
-[*][b]Potato McWhisky[/b], for teaching me to love again, Civilization-wise (Civ VI), after growing up as a Civilization II, IV, and V player. Making this mod is an act of faith that the community will eventually help make Civilization VII as good as the previous entries.
+[*][b]Potato McWhisky[/b], for teaching me to love again, Civilization-wise (Civ VI), after growing up as a Civilization II, IV, and V player.
 [/list]

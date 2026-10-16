@@ -176,6 +176,7 @@ Portuguese (Brazil), Russian and Chinese (Simplified and Traditional), following
 - A notch sent in the first moment of one of the game's own camera moves can cut that move short, as in the
   unmodded game.
 - Alt (Option on a Mac) is the game's own camera key, so the default keys use Shift instead.
+- Use it on its own, not alongside another zoom or camera mod. They change the same camera controls.
 
 ## How it works
 
