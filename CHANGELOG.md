@@ -2,6 +2,12 @@
 
 All notable changes to Zoom, Tilt, & Rotate are documented here. This project follows semantic versioning.
 
+## [Unreleased]
+
+- Carries Civilopedia History Corrections. With Civilopedia Expanded: Independents on, six East Asian history pages
+  in the Civilopedia (Goguryeo, the Oirat, two Ryukyu pages, Nanzhao and Balhae) give each side where historians in
+  different countries disagree, and a few factual errors are fixed. With it off, the game's pages stay as they are.
+
 ## [1.1.1] - 2026-10-16
 
 - Closing the building-placement or buy-tile screen no longer swings the camera to north and back. With the view

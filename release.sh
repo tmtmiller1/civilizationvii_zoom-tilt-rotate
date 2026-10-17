@@ -22,7 +22,7 @@ grep -q "^## \[$VERSION\]" CHANGELOG.md || { echo "error: CHANGELOG.md has no en
 if [ "${SKIP_VERIFY:-0}" != "1" ]; then
     npm run release:gate || { echo "release: 'npm run release:gate' FAILED; aborting."; exit 1; }
 fi
-command -v xmllint >/dev/null 2>&1 && xmllint --noout text/*/ModText.xml
+command -v xmllint >/dev/null 2>&1 && xmllint --noout text/*/ModText.xml history-corrections/*.xml
 
 ZIP_NAME="$MOD_ID-v${VERSION}.zip"
 TARGET_DIR="$DIST_DIR/$MOD_ID"
@@ -34,7 +34,7 @@ mkdir -p "$TARGET_DIR/text"
 
 echo "==> Copying the shipped files into $TARGET_DIR/"
 cp "$MOD_ID.modinfo" README.md CHANGELOG.md LICENSE "$TARGET_DIR/"
-cp -R ui icons "$TARGET_DIR/"
+cp -R ui icons history-corrections "$TARGET_DIR/"
 for lang in text/*/; do mkdir -p "$TARGET_DIR/$lang"; cp "$lang/ModText.xml" "$TARGET_DIR/$lang"; done
 find "$TARGET_DIR" -name '.DS_Store' -delete
 
@@ -49,6 +49,7 @@ ALLOW="^$MOD_ID/($MOD_ID\.modinfo|README\.md|LICENSE|CHANGELOG\.md)$"
 ALLOW="$ALLOW"'|^'"$MOD_ID"'/ui/[a-z-]+\.js$'
 ALLOW="$ALLOW"'|^'"$MOD_ID"'/icons/[a-z-]+\.png$'
 ALLOW="$ALLOW"'|^'"$MOD_ID"'/text/[a-z_]+/ModText\.xml$'
+ALLOW="$ALLOW"'|^'"$MOD_ID"'/history-corrections/[a-z-]+-text\.xml$'
 UNEXPECTED="$(unzip -Z1 "$ZIP_PATH" | grep -vE '/$' | grep -vE "$ALLOW" || true)"
 if [ -n "$UNEXPECTED" ]; then
     echo "error: zip contains entries not on the allow-list:"
