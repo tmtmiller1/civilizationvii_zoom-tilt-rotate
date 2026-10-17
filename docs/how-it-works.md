@@ -31,8 +31,14 @@ at its own angle; it follows the tilt and the lens through `Camera.setTilt`, `Ca
   edge of the map, so the far end stops at 90.
 - `Camera.setTilt(angle, 1)` takes 0 to 80 degrees from straight down, and `Camera.rotate(heading, true)` turns the
   view and holds it; `Camera.getState()` reports both, so every ease starts from what's on screen. Both jump straight
-  to the new value, so the mod eases them itself. `Camera.restoreDefaults()` (closing a city screen, among others)
-  clears both, and the mod puts them back.
+  to the new value, so the mod eases them itself. `Camera.restoreDefaults()` (closing the place-building or buy-tile
+  screen, among others) drops the lens at once and starts the engine swinging the heading to north and the tilt
+  weight to 0 over about half a second, the same swing as `Camera.rotate(0, false)`. A `Camera.rotate(heading, true)`
+  in the same frame stops the swing before it shows, so the mod holds the heading there and then eases the tilt back.
+  Waiting a frame and easing from what the camera reports races that swing: a read taken before it moved looks like
+  "already there", and the camera then turns all the way to north; a read taken later eases back from part-way, a
+  visible wobble. The place-building screen's own framing (a `Camera.addKeyframe` with `FLAG_ALL`) leaves the heading
+  alone; `KeyframeFlag` has no rotation bit.
 - Keyboard, edge and gamepad panning move along the map, not the screen, so the mod turns each pan step by the
   heading. The step is also scaled by tan(fov / 2), which keeps a held arrow key moving the same share of the screen
   at any lens: about 1.56 screens per half second near the ground and 0.8 to 1.0 far out, against the game's own

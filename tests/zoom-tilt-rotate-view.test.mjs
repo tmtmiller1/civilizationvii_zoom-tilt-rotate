@@ -4,10 +4,11 @@
 
 import test from "node:test";
 import assert from "node:assert/strict";
-import { camera, cameraAngle, command, lastView, wait } from "./camera-harness.mjs";
+import { camera, cameraAngle, command, frames, lastView, wait } from "./camera-harness.mjs";
 
 await import("../ui/zoom-tilt-rotate.js");
 const { setAngleStep, setTurnStep } = await import("../ui/zoom-tilt-rotate-settings.js");
+const { easeView } = await import("../ui/zoom-tilt-rotate-view.js");
 
 function near(actual, expected, tolerance = 1e-6) {
   assert.ok(Math.abs(actual - expected) <= tolerance, `${actual} isn't within ${tolerance} of ${expected}`);
@@ -96,9 +97,51 @@ test("Back to normal faces north, goes back to the game's angle and brings the z
   assert.ok(camera.fieldOfView < 20, `lens ${camera.fieldOfView}`);
   command("backToNormal");
   const { heading, angle, zoom, beyondLimits } = lastView();
-  wait(700);
+  // The turn eases over 600 ms and then lets go, and the engine's own swing to north takes another half second.
+  wait(1300);
   assert.deepEqual({ heading, angle, zoom, beyondLimits }, { heading: 0, angle: null, zoom: 0, beyondLimits: false });
   near(camera.fieldOfView, 35);
   near(camera.tiltWeight, 0);
   near(camera.rotation, 0);
+});
+
+// Closing the place-building or buy-tile screen calls Camera.restoreDefaults(), and the engine then swings the heading
+// to north over about half a second. A player facing south saw the camera turn to north and spin back.
+const offSouth = () => Math.abs(((camera.rotation - 180) % 360 + 540) % 360 - 180);
+
+test("closing a city screen keeps the heading: the game's swing to north never shows", () => {
+  command("setHeading", undefined, 180);
+  wait(700);
+  near(offSouth(), 0, 0.05);
+  Camera.restoreDefaults();
+  let strayed = 0;
+  for (let i = 0; i < 60; i++) {
+    frames(1);
+    strayed = Math.max(strayed, offSouth());
+  }
+  assert.ok(strayed < 0.5, `heading strayed ${strayed} degrees`);
+  near(offSouth(), 0);
+});
+
+test("the angle comes back after a city screen closes", () => {
+  command("setAngle", undefined, 50);
+  wait(700);
+  Camera.restoreDefaults();
+  wait(900);
+  near(camera.customTilt, 50, 1e-3);
+  near(camera.tiltWeight, 1, 1e-3);
+  tap("backToNormal");
+});
+
+test("when the camera reads as already at the heading, the ease still holds it there", () => {
+  command("setHeading", undefined, 90);
+  wait(700);
+  // The engine's release to north, read before it has moved anything: the ease has nothing to ease, and must still
+  // stop the swing.
+  Camera.rotate(0, false);
+  near(camera.rotation, 90, 0.05);
+  easeView();
+  wait(700);
+  near(camera.rotation, 90);
+  tap("backToNormal");
 });

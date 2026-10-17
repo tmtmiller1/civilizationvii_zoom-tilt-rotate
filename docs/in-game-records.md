@@ -61,3 +61,27 @@ Game 1.5.0, windowed 1600x1000, every other user mod off, ZTR's `Mods/` copy wit
 - Resources boxes: the minimap's box, ZTR's box and `toggleLayer` agreed at every step.
 - Resource-icon twin: captures `V6-ztr-icons-game-angle.png` and `V6-ztr-icons-tipped.png` (tilt 64) taken, but at
   turn 1 too few resources were in view to judge the size change. Still owed.
+
+## 2026-10-16, placement heading L3: usual set, Antiquity, seed 4242, turn 1
+
+Game 1.5.0, windowed, lab start `--setup fast --quick`, every Tower mod on from its `Mods/` copy, ZTR's working tree
+deployed (`deploy --prove`: all 9 files served). The capital founded by script on turn 1. Follows a player report: with
+the view facing south, placing a building turned the camera to north and spun it back, every time.
+
+- `heading-through-placement.js` before the fix (1.1.0 code), heading 180: opening `INTERFACEMODE_PLACE_BUILDING`
+  kept the heading at every sample through the 1 s framing (zoom 0.4 to 0.3, tilt 0 to 30); closing it read -180,
+  -152.8, -177.4, -180 at 0, 259, 517 and 774 ms: a 27 degree swing toward north and back. The screen's keyframe
+  (`Camera.addKeyframe`, `writeMask: KeyframeFlag.FLAG_ALL`) on its own left the heading at -180 throughout;
+  `KeyframeFlag` is FOCUS 1, ZOOM 2, ORBIT 4, FOV 8, TILT 16, ALL 31. `lookAtPlot` to zoom 0.5 kept it too.
+- `restore-defaults-heading.js`: `Camera.rotate(-180, true)` lands the next frame and holds. `Camera.restoreDefaults()`
+  on its own then eased the heading -180, -139, -106, -79, -58, -42, -28, -19, -12, -7, -4, -2, -1, 0 over 500 ms, the
+  same curve as `Camera.rotate(0, false)`. One `rotate(-180, true)` on the next frame stopped it (one sample at -169,
+  then -180 held); a hold in the same frame as `restoreDefaults`, followed by `restoreCameraZoom` and `clearAnimation`
+  as city-zoomer calls them, kept -180 at every frame. `restoreDefaults` eases the tilt weight 1 to 0 over 600 ms the
+  same way; a `setTilt(50, 1)` right after it dipped to 0.06 and eased back to 1 by 600 ms.
+- After the fix (hold in the same frame, and the ease asserts the hold when the camera reads as already there), the
+  heading strayed 0.0 degrees at every frame through 2 s of opening and 2 s of closing, three times: at the game's lens
+  (zoom 0.4), with the angle at 50 (back at 50/1.00 after), and from the 5 degree close-up (zoom 0, lens 5 after).
+  Back to normal afterwards read 0 degrees, 35 degree lens.
+
+Not reached: the same with every other mod off.

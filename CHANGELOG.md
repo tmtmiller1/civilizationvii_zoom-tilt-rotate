@@ -2,6 +2,12 @@
 
 All notable changes to Zoom, Tilt, & Rotate are documented here. This project follows semantic versioning.
 
+## [1.1.1] - 2026-10-16
+
+- Closing the building-placement or buy-tile screen no longer swings the camera to north and back. With the view
+  turned, say to face south, the heading now stays put through the screen opening and closing, and so do a tipped
+  angle and the close-up. Reported by a player who saw a half turn and a spin back on every building.
+
 ## [1.1.0] - 2026-10-15
 
 - Tipped toward the horizon, the resource icons now get smaller with distance instead of piling up along the far

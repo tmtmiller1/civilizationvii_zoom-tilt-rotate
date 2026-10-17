@@ -52,6 +52,19 @@ function viewTarget() {
     : { angle: viewAngle * (1 - farOutShare), weight: 1, heading: viewHeading };
 }
 
+// The camera reads as already at the view. The engine may still be on its way elsewhere, though: after
+// Camera.restoreDefaults() or Camera.rotate(0, false) it swings the heading to north and the tilt to the game's own
+// over about half a second, and a read taken before that swing has moved anything looks like "nothing to do". Telling
+// the engine the view once more stops the swing; when it was holding still anyway, it changes nothing.
+function holdView(from, to) {
+  if (to.heading === 0) {
+    if (from.heading !== 0) Camera.rotate(0, false);
+  } else {
+    Camera.rotate(to.heading, true);
+  }
+  if (viewAngle !== null) Camera.setTilt(to.angle, to.weight);
+}
+
 /** Ease the camera to the player's view. With no duration it takes the slower ease the angle and turn keys get. */
 export function easeView(durationMs) {
   if (!Number.isFinite(durationMs) || durationMs <= 0 || durationMs > 2000) durationMs = TURN_EASE_MS;
@@ -61,7 +74,7 @@ export function easeView(durationMs) {
   const turn = ((to.heading - from.heading) % 360 + 540) % 360 - 180;
   const tilts = Math.abs(to.angle - from.angle) > 0.05 || Math.abs(to.weight - from.weight) > 0.002;
   if (!tilts && Math.abs(turn) < 0.05) {
-    if (to.heading === 0 && from.heading !== 0) Camera.rotate(0, false);
+    holdView(from, to);
     return;
   }
   const start = performance.now();
@@ -230,11 +243,14 @@ export function endGlide(kind) {
   else stepBy(kind, direction);
 }
 
-// Camera.restoreDefaults() (closing a city screen, among others) drops the angle and the heading along with the
-// lens. Put the player's back.
+// Camera.restoreDefaults() (closing the place-building and buy-tile screens, among others) drops the lens at once
+// and starts the engine swinging the heading to north and the tilt to the game's own over about half a second. Hold
+// the player's heading again in the same frame, before that swing has moved anything, and it never shows; the tilt
+// eases back from the next frame.
 const originalRestoreDefaults = Camera.restoreDefaults;
 Camera.restoreDefaults = function (...args) {
   const result = originalRestoreDefaults.apply(this, args);
+  if (viewHeading !== 0) Camera.rotate(viewHeading, true);
   if (viewAngle !== null || viewHeading !== 0) {
     requestAnimationFrame(() => easeView());
   }

@@ -38,6 +38,7 @@ Object.defineProperty(globalThis, "performance", {
 export function frames(count = 1) {
   for (let i = 0; i < count; i++) {
     clock.now += 16;
+    swingOneFrame();
     for (const timer of timers.filter((t) => t.at <= clock.now)) {
       if (!timers.includes(timer)) continue;
       if (timer.every) timer.at += timer.every;
@@ -83,7 +84,25 @@ export const camera = {
   zooms: [],
   pans: [],
   wheelZoomHeld: [],
+  swing: null,
 };
+
+// The engine's own swing after restoreDefaults() or rotate(0, false): the heading eases to north and, from
+// restoreDefaults(), the tilt weight eases to 0, both over SWING_MS. It runs from the clock, a frame at a time.
+const SWING_MS = 500;
+function startSwing({ rotation, tilt = false }) {
+  camera.swing = {
+    start: clock.now, fromRotation: camera.rotation, toRotation: rotation, tilt, fromWeight: camera.tiltWeight,
+  };
+}
+export function swingOneFrame() {
+  const swing = camera.swing;
+  if (!swing) return;
+  const share = Math.min(1, (clock.now - swing.start) / SWING_MS);
+  camera.rotation = swing.fromRotation + (swing.toRotation - swing.fromRotation) * share;
+  if (swing.tilt) camera.tiltWeight = swing.fromWeight * (1 - share);
+  if (share === 1) camera.swing = null;
+}
 
 const distance = () => 1000 + 2000 * camera.zoomLevel;
 export const cameraAngle = () => camera.gameAngle + (camera.customTilt - camera.gameAngle) * camera.tiltWeight;
@@ -117,15 +136,24 @@ globalThis.Camera = {
   setVerticalFoV(degrees) {
     camera.fieldOfView = Math.min(Math.max(degrees, 1), 120);
   },
+  // Camera.rotate(heading, true) jumps there and holds. Camera.rotate(0, false) lets go: the engine swings the heading
+  // back to north over about half a second, as it does after restoreDefaults(). A hold or a new tilt stops the swing.
+  rotate(heading, hold) {
+    if (hold) {
+      camera.swing = null;
+      camera.rotation = heading;
+    } else {
+      startSwing({ rotation: 0 });
+    }
+  },
   setTilt(angle, weight) {
+    if (camera.swing) camera.swing = { ...camera.swing, tilt: false };
     camera.customTilt = angle;
     camera.tiltWeight = weight;
   },
-  rotate(heading) {
-    camera.rotation = heading;
-  },
   restoreDefaults() {
-    Object.assign(camera, { fieldOfView: GAME_FIELD_OF_VIEW, customTilt: 0, tiltWeight: 0, rotation: 0 });
+    camera.fieldOfView = GAME_FIELD_OF_VIEW;
+    startSwing({ rotation: 0, tilt: true });
   },
   panFocus(step) {
     camera.pans.push(step);
