@@ -9,6 +9,8 @@
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="pl_PL"><Text>Bliżej (7x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="pl_PL"><Text>Dużo bliżej (18x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="pl_PL"><Text>Maksymalnie (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE" Language="pl_PL"><Text>Zachowaj pochylenie przy dużym oddaleniu</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE_DESCRIPTION" Language="pl_PL"><Text>Po oddaleniu widoku poza najdalszy widok gry kamera obraca się, by patrzeć prosto z góry. Zaznacz to, by zachować swoje pochylenie. Kamera pochyla się w dół tylko na tyle, by niebo nie pojawiło się na ekranie, a przy pochyleniu gry wcale się nie pochyla. Zmiany działają od razu.</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="pl_PL"><Text>{1_Num}°</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="pl_PL"><Text>Krok obrotu</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="pl_PL"><Text>O ile obraca widok jedno naciśnięcie klawisza obrotu albo przycisków obrotu w panelu kamery. Widok zostaje zwrócony w tę stronę, dopóki znów go nie obrócisz albo nie wrócisz do normalnego widoku.</Text></Replace>

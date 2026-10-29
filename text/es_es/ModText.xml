@@ -9,6 +9,8 @@
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="es_ES"><Text>Más cerca (7x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="es_ES"><Text>Mucho más cerca (18x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="es_ES"><Text>Al máximo (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE" Language="es_ES"><Text>Mantener la inclinación al alejar mucho la vista</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE_DESCRIPTION" Language="es_ES"><Text>Al alejar la vista más allá de la vista más lejana del juego, la cámara pasa a mirar recto hacia abajo. Marca esta opción para mantener tu inclinación. La cámara solo se inclina hacia abajo lo necesario para que no se vea el cielo, y con la inclinación propia del juego no se inclina nada. Los cambios se aplican al momento.</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="es_ES"><Text>{1_Num}°</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="es_ES"><Text>Paso de giro</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="es_ES"><Text>Cuánto gira la vista al pulsar una vez una tecla de giro o los botones de giro del panel de cámara. La vista sigue orientada así hasta que vuelvas a girarla o vuelvas a la vista normal.</Text></Replace>

@@ -1,13 +1,14 @@
-// zoom-tilt-rotate-options.js - the mod's rows in Options > Add-ons: how close the player can zoom in, how far one
-// press of the angle and turn keys moves the camera, the dials on screen, and "Camera keys", which opens
-// zoom-tilt-rotate-keys-editor.js. Loaded in the main menu and in a game; a change applies straight away, and Cancel
-// puts back what was there on opening.
+// zoom-tilt-rotate-options.js - the mod's rows in Options > Add-ons: how close the player can zoom in, whether far
+// out keeps the angle, how far one press of the angle and turn keys moves the camera, the dials on screen, and
+// "Camera keys", which opens zoom-tilt-rotate-keys-editor.js. Loaded in the main menu and in a game; a change applies
+// straight away, and Cancel puts back what was there on opening.
 
 import { CategoryType, OptionType, Options } from "/core/ui/options/model-options.js";
 import { CategoryData } from "/core/ui/options/options-helpers.js";
 import {
-  CLOSE_UP_REACHES, TURN_STEPS, ANGLE_STEPS, getCloseUpReach, setCloseUpReach, getTurnStep, setTurnStep, getAngleStep,
-  setAngleStep, getShowDials, setShowDials, getDialOnScreen, setDialOnScreen, refreshSettings, localized as text
+  CLOSE_UP_REACHES, TURN_STEPS, ANGLE_STEPS, getCloseUpReach, setCloseUpReach, getKeepAngleFarOut, setKeepAngleFarOut,
+  getTurnStep, setTurnStep, getAngleStep, setAngleStep, getShowDials, setShowDials, getDialOnScreen, setDialOnScreen,
+  refreshSettings, localized as text
 } from "/tmt-zoom-tilt-rotate/ui/zoom-tilt-rotate-settings.js";
 import "/tmt-zoom-tilt-rotate/ui/zoom-tilt-rotate-keys-editor.js"; // defines <zoom-tilt-rotate-keys-editor> for the "Camera keys" row
 
@@ -43,6 +44,16 @@ function addCloseUpRow() {
     },
     restoreListener: (/** @type {*} */ info) => setCloseUpReach(reachAt(info.valueOnOpen).id)
   });
+}
+
+function addKeepAngleRow() {
+  addCheckboxRow("zoom-tilt-rotate-keep-angle-far-out",
+    text("LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE", "Keep the angle when zoomed far out"),
+    text("LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE_DESCRIPTION",
+      "Zooming out past the game's farthest view turns the camera to look straight down. Tick this to keep your " +
+      "angle instead. The camera only tips down as far as it needs to keep the sky off the screen, and at the " +
+      "game's own angle it doesn't tip at all. Changes apply right away."),
+    getKeepAngleFarOut, setKeepAngleFarOut);
 }
 
 // A step list as a dropdown: "45 degrees", "90 degrees".
@@ -157,6 +168,7 @@ try {
   Options.addInitCallback(() => {
     refreshSettings();
     addCloseUpRow();
+    addKeepAngleRow();
     addStepRows();
     addDialRows();
     addKeysRow();

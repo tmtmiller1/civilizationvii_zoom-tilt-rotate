@@ -13,7 +13,7 @@ const GAME_FIELD_OF_VIEW = 35;
 const rad = (degrees) => degrees * Math.PI / 180;
 
 // The clock: requestAnimationFrame, setTimeout and setInterval run only from frames() and wait(), 16 ms a frame.
-export const clock = { now: 1000 };
+export const clock = { now: 1000, frame: 0, inFrame: false };
 let frameQueue = [];
 let timers = [];
 let nextTimerId = 1;
@@ -38,6 +38,7 @@ Object.defineProperty(globalThis, "performance", {
 export function frames(count = 1) {
   for (let i = 0; i < count; i++) {
     clock.now += 16;
+    clock.frame += 1;
     swingOneFrame();
     for (const timer of timers.filter((t) => t.at <= clock.now)) {
       if (!timers.includes(timer)) continue;
@@ -47,7 +48,9 @@ export function frames(count = 1) {
     }
     const queue = frameQueue;
     frameQueue = [];
+    clock.inFrame = true;
     for (const callback of queue) callback();
+    clock.inFrame = false;
   }
 }
 
@@ -80,6 +83,22 @@ export const camera = {
   customTilt: 0,
   tiltWeight: 0,
   fieldOfView: GAME_FIELD_OF_VIEW,
+  // 0: a lens change lands at once. Otherwise the share of the gap the lens closes each frame, the way the engine
+  // eases one (quickly at first).
+  lensEase: 0,
+  lensTarget: GAME_FIELD_OF_VIEW,
+  // 0: a zoom lands at once. Otherwise the share of the gap the zoom closes each frame, and what the engine does to a
+  // zoom on its way (devtools/zoom-freeze.js, 2026-10-29): a tilt in the frame it started cancels it, tilts in two
+  // frames running hold it still for the next one, and a turn makes it jump to its end. zoomStuck holds every zoom
+  // where it is, as the game can.
+  zoomEase: 0,
+  zoomTarget: 0.5,
+  zoomStartFrame: -1,
+  lastTiltFrame: -10,
+  heldFrame: -1,
+  zoomStuck: false,
+  zoomCancels: 0,
+  zoomJumps: 0,
   gameAngle: 37.3,
   zooms: [],
   pans: [],
@@ -95,7 +114,16 @@ function startSwing({ rotation, tilt = false }) {
     start: clock.now, fromRotation: camera.rotation, toRotation: rotation, tilt, fromWeight: camera.tiltWeight,
   };
 }
+const zoomMoving = () => camera.zoomEase > 0 && Math.abs(camera.zoomTarget - camera.zoomLevel) > 1e-4;
+// The frame a call belongs to: the one running, or between frames the next one.
+const callFrame = () => (clock.inFrame ? clock.frame : clock.frame + 1);
+
 export function swingOneFrame() {
+  if (camera.lensEase) camera.fieldOfView += (camera.lensTarget - camera.fieldOfView) * camera.lensEase;
+  if (zoomMoving() && camera.heldFrame !== clock.frame && !camera.zoomStuck) {
+    camera.zoomLevel += (camera.zoomTarget - camera.zoomLevel) * camera.zoomEase;
+    if (Math.abs(camera.zoomTarget - camera.zoomLevel) < 1e-4) camera.zoomLevel = camera.zoomTarget;
+  }
   const swing = camera.swing;
   if (!swing) return;
   const share = Math.min(1, (clock.now - swing.start) / SWING_MS);
@@ -131,14 +159,25 @@ globalThis.Camera = {
   }),
   zoom(level) {
     camera.zooms.push(level);
-    camera.zoomLevel = level;
+    if (!camera.zoomEase) {
+      camera.zoomLevel = level;
+      return;
+    }
+    camera.zoomTarget = level;
+    camera.zoomStartFrame = callFrame();
   },
   setVerticalFoV(degrees) {
-    camera.fieldOfView = Math.min(Math.max(degrees, 1), 120);
+    camera.lensTarget = Math.min(Math.max(degrees, 1), 120);
+    if (!camera.lensEase) camera.fieldOfView = camera.lensTarget;
   },
   // Camera.rotate(heading, true) jumps there and holds. Camera.rotate(0, false) lets go: the engine swings the heading
   // back to north over about half a second, as it does after restoreDefaults(). A hold or a new tilt stops the swing.
   rotate(heading, hold) {
+    // The mod counts a zoom within 0.002 of where it's going as there; a jump that small doesn't show.
+    if (zoomMoving()) {
+      if (Math.abs(camera.zoomTarget - camera.zoomLevel) > 0.002) camera.zoomJumps += 1;
+      camera.zoomLevel = camera.zoomTarget;
+    }
     if (hold) {
       camera.swing = null;
       camera.rotation = heading;
@@ -147,12 +186,20 @@ globalThis.Camera = {
     }
   },
   setTilt(angle, weight) {
+    const frame = callFrame();
+    if (zoomMoving() && frame === camera.zoomStartFrame) {
+      camera.zoomCancels += 1;
+      camera.zoomTarget = camera.zoomLevel;
+    } else if (zoomMoving() && camera.lastTiltFrame === frame - 1) {
+      camera.heldFrame = frame + 1;
+    }
+    camera.lastTiltFrame = frame;
     if (camera.swing) camera.swing = { ...camera.swing, tilt: false };
     camera.customTilt = angle;
     camera.tiltWeight = weight;
   },
   restoreDefaults() {
-    camera.fieldOfView = GAME_FIELD_OF_VIEW;
+    camera.fieldOfView = camera.lensTarget = GAME_FIELD_OF_VIEW;
     startSwing({ rotation: 0, tilt: true });
   },
   panFocus(step) {

@@ -9,7 +9,7 @@ import { InputHandlerState } from "/core/ui/input/input-support.js";
 import { getCloseUpReach, SETTINGS_CHANGED_EVENT } from "/tmt-zoom-tilt-rotate/ui/zoom-tilt-rotate-settings.js";
 import {
   HOLD_MS, currentView, easeView, endGlide, isTurned, measureAngle, onViewMoved, resetView, setAngle,
-  setFarOutShare, setHeading, startGlide, stepBy
+  sendZoom, setFarOutShare, setHeading, startGlide, stepBy, useLens
 } from "/tmt-zoom-tilt-rotate/ui/zoom-tilt-rotate-view.js";
 import "/tmt-zoom-tilt-rotate/ui/zoom-tilt-rotate-icons.js";
 
@@ -18,9 +18,9 @@ import "/tmt-zoom-tilt-rotate/ui/zoom-tilt-rotate-icons.js";
 // -CLOSE_UP.reach to 1 + FAR_OUT.reach. A wheel notch is 0.09 (the controller's
 // 0.3 rate times 0.3), so a reach of 0.54 is six notches.
 //
-// Far out, the camera turns to look straight down; with the game's tilt a wide
-// lens shows the sky and the edge of the map. How far in the lens goes is the
-// player's choice in Options (zoom-tilt-rotate-settings.js), read on every zoom.
+// Far out, the camera turns to look straight down, unless the player keeps the
+// angle (zoom-tilt-rotate-view.js). How far in the lens goes is the player's
+// choice in Options (zoom-tilt-rotate-settings.js), read on every zoom.
 const GAME_FIELD_OF_VIEW = 35;
 const CLOSE_UP = { tilt: null, reach: 0.54 };
 const FAR_OUT = { fieldOfView: 90, tilt: 0, reach: 0.54 };
@@ -33,8 +33,10 @@ const ZOOM_SETTLE_MS = 700;
 // A field-of-view change eases in too; measure it only after this long.
 const LENS_SETTLE_MS = 1000;
 
-// Apply the lens anyway if the zoom hasn't arrived by then.
+// Apply the lens anyway if the zoom hasn't arrived by then, unless it's still
+// more than LENS_SHORT_BY short of the limit.
 const LENS_WAIT_LIMIT_MS = 1500;
+const LENS_SHORT_BY = 0.02;
 
 const clamp = (value, low, high) => Math.min(Math.max(value, low), high);
 const blend = (from, to, share) => from + (to - from) * share;
@@ -157,7 +159,7 @@ function lensFor(zoom) {
   return { fieldOfView: blend(GAME_FIELD_OF_VIEW, FAR_OUT.fieldOfView, share), tilt: FAR_OUT.tilt, share };
 }
 
-// setVerticalFoV cancels a zoom that's still moving, and re-sending the same
+// A lens change every frame holds a moving zoom still, and re-sending the same
 // zoom every frame restarts its ease so it barely moves. So send the zoom only
 // when it changes, and hold the lens until the zoom reaches the limit.
 function goToZoom(zoom) {
@@ -181,8 +183,9 @@ function sendEngineZoom(engineZoom) {
   lastSentZoom = engineZoom;
   zoomUnderLens = null;
   if (performance.now() < lensSettlesAt) zoomOnceLensSettles();
-  else Camera.zoom(engineZoom);
+  else sendZoom(engineZoom);
 }
+
 
 // Counts the frames the camera's zoom has stood still.
 function stallWatch() {
@@ -226,7 +229,7 @@ function zoomOnceLensSettles() {
       return;
     }
     lastSentAt = performance.now();
-    Camera.zoom(lastSentZoom);
+    sendZoom(lastSentZoom);
     followZoomHome();
   };
   requestAnimationFrame(waitForLens);
@@ -248,7 +251,7 @@ function followZoomHome() {
       resent = true;
       stall.reset();
       lastSentAt = performance.now();
-      Camera.zoom(lastSentZoom);
+      sendZoom(lastSentZoom);
     }
     const gaveUp = (resent && stall.frames >= 3) || performance.now() >= lensSettlesAt + 2000;
     if (!arrived && !gaveUp) {
@@ -276,13 +279,21 @@ function applyLensOnceZoomArrives() {
     if (stillMoving && stillFrames >= 3 && resends < 2) {
       resends++;
       stall.reset();
-      Camera.zoom(lastSentZoom);
+      sendZoom(lastSentZoom);
     }
     if (lensWaitingForZoom && stillMoving && performance.now() < giveUpAt) {
       requestAnimationFrame(check);
       return;
     }
     lensTimerRunning = false;
+    // Still well short of the limit: something is holding the zoom, and the lens
+    // would go on at the wrong height. Stay where the camera stopped instead.
+    if (lensWaitingForZoom && Math.abs(zoom - lastSentZoom) > LENS_SHORT_BY) {
+      requestedZoom = lastSentZoom = zoom;
+      returnToGameLens();
+      announceSoon();
+      return;
+    }
     applyWaitingLens();
   };
   check();
@@ -398,11 +409,19 @@ function zoomAmountFor(status, deflection) {
 }
 
 // Don't let the requested zoom run far ahead of what's on screen: 0.3 ahead of
-// the camera, or one notch ahead of the lens past a limit. A trackpad scroll is a
-// stream of full-notch wheel events and would otherwise cross the whole range in
-// one swipe, then keep going after the fingers stop.
+// the camera, or three notches ahead of the lens past a limit. A trackpad scroll
+// is a stream of full-notch wheel events and would otherwise cross the whole range
+// in one swipe, then keep going after the fingers stop. The engine eases a lens
+// change over most of a second, so at one notch ahead a quick spin lost about
+// half its notches (nine notches ended at 1.33, not 1.54). From inside the range
+// the zoom goes one notch past the limit, where the lens takes over.
 const MOST_AHEAD_OF_CAMERA = 0.3;
-const MOST_AHEAD_OF_LENS = 0.09;
+const MOST_AHEAD_OF_LENS = 0.27;
+const ONE_NOTCH = BASE_ZOOM_RATE * BASE_ZOOM_RATE;
+
+// How far past the far limit a lens is, from 0 at the game's to 1 at the widest.
+const farOutShareFor = (degrees) =>
+  clamp((degrees - GAME_FIELD_OF_VIEW) / (FAR_OUT.fieldOfView - GAME_FIELD_OF_VIEW), 0, 1);
 
 function zoomShownByLens() {
   const degrees = measureFieldOfView();
@@ -410,9 +429,17 @@ function zoomShownByLens() {
   if (requestedZoom < 0) {
     return -clamp(closeUpShare(degrees, closeUpEnd), 0, 1) * CLOSE_UP.reach;
   }
-  const share = (degrees - GAME_FIELD_OF_VIEW) / (FAR_OUT.fieldOfView - GAME_FIELD_OF_VIEW);
-  return 1 + clamp(share, 0, 1) * FAR_OUT.reach;
+  return 1 + farOutShareFor(degrees) * FAR_OUT.reach;
 }
+
+// Far out, the angle follows the lens on screen frame by frame.
+useLens({
+  degreesAt: (share) => blend(GAME_FIELD_OF_VIEW, FAR_OUT.fieldOfView, share),
+  shareOnScreen: () => {
+    const degrees = measureFieldOfView();
+    return degrees === null ? null : farOutShareFor(degrees);
+  },
+});
 
 function keepNearView(zoom) {
   if (requestedZoom < 0 || requestedZoom > 1) {
@@ -421,7 +448,7 @@ function keepNearView(zoom) {
   }
   const shown = Camera.getState().zoomLevel;
   const nearCamera = clamp(zoom, shown - MOST_AHEAD_OF_CAMERA, shown + MOST_AHEAD_OF_CAMERA);
-  return clamp(nearCamera, -MOST_AHEAD_OF_LENS, 1 + MOST_AHEAD_OF_LENS);
+  return clamp(nearCamera, -ONE_NOTCH, 1 + ONE_NOTCH);
 }
 
 // zoomInProgress belongs to the camera controller: 0 none, 1 in, 2 out.
@@ -575,7 +602,7 @@ let zoomHold = null;
 
 function stepZoom(direction) {
   catchUpWithGame();
-  goToZoom(keepNearView(requestedZoom + direction * BASE_ZOOM_RATE * BASE_ZOOM_RATE));
+  goToZoom(keepNearView(requestedZoom + direction * ONE_NOTCH));
 }
 
 function holdZoom(direction) {

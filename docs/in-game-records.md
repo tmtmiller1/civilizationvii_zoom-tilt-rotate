@@ -85,3 +85,67 @@ the view facing south, placing a building turned the camera to north and spun it
   Back to normal afterwards read 0 degrees, 35 degree lens.
 
 Not reached: the same with every other mod off.
+
+## 2026-10-29, far-out feel: ZTR alone, Antiquity, seed 4242, turn 1
+
+Game 1.5.0, windowed 1600x1000, `tools/crash-soak/run-soak.sh` with only ZTR on (every other third-party mod off),
+capital founded by script. First the released 1.1.2 files, then the working tree copied over them and the UI
+reloaded. Follows two Workshop comments: past the farthest view, the zoom moved first and the angle afterwards, which
+felt wobbly. Synthetic wheel notches through the camera controller at about 23 frames a second.
+
+- `far-out-feel.js` on 1.1.2. Inside the game's range the height eased and the angle hardly moved (41.7 to 40 degrees
+  from zoom 0.46 to 1). Past it, each notch's lens started at once and eased out, while the angle started about
+  100 ms later on its own 250 ms ease and stood still for a frame or two at every notch. Scored as the gap between the
+  lens's share of the way out and the tilt weight: one notch at a time averaged 0.7% (worst 6%), a fast spin of nine
+  notches 150 ms apart averaged 5.5% (worst 14%) with the angle stalled on 11 frames, and coming back in fast averaged
+  4.3% (worst 11%). The fast spin also ended at 1.33 on the mod's scale instead of 1.54: past the limit the zoom runs at
+  most a notch ahead of the lens on screen, and the lens hadn't caught up.
+- Engine checks: one `setVerticalFoV(50)` 200 ms into a zoom from 0.6 to 1 let the zoom arrive; so did one
+  `setTilt(10, 0.5)`. A `setTilt` every frame held the zoom at 0.6 for the whole 1.2 s. A single tilt call eased in
+  with a time constant of about 105 ms, a single lens call about 250 ms.
+- `far-out-sync.js` on the engine directly, the zoom parked at 1: both calls once per notch put the angle up to a
+  third ahead of the lens; tilting every frame for the lens on screen trailed by 7% on average; aiming 0.35 to 0.55 of
+  the remaining way ahead kept the average gap at 0.5 to 2% with no stalls. 0.4 went into the fix.
+- `far-out-feel.js` on the fix: one notch at a time averaged 0.3% (worst 3%), the fast spin 0.3% (worst 3%) with one
+  stalled frame, and coming back in fast 0.8% (worst 3%). Inside the game's range nothing changed.
+- `keep-angle-far-out.js` with the box ticked: at the game's angle every notch out to the 90 degree lens read 40
+  degrees. From 60 degrees the notches read 60, 58.3, 53.8, 49.2, 44.6, 40 and 40 against 85 minus half the lens (60,
+  58.5, 54, 49, 44.5, 40, 40). Clearing the box at the far end turned the camera to 0.5 degrees.
+- Captures in `working_screenshots/ztr-far-out-2026-10-29/`, the map revealed for 05 to 10: 08 is the angle held at
+  40 with the 90 degree lens (the polar ice along the top, no sky), 09 the same through the new option, 10 the fix's
+  far end with the box clear.
+- Seen alongside: with a player angle still settling from the panel's angle gauge, nine notches out didn't move the
+  zoom (it stayed at 0.73), and after 1.5 s the far-out lens went on at that height. The gauge's chase sends a tilt
+  every frame, which holds the zoom still. Fixed and watched in the next entry.
+
+Not reached: the same with the usual mod set, a real mouse wheel or trackpad, and the new Options row on screen.
+
+## 2026-10-29, zooming while the angle or heading moves: ZTR alone, Antiquity, seed 4242, turn 1
+
+Same setup as the entry above, a fresh game (`run-soak.sh`, label ztr3), about 62 frames a second. The released
+1.1.2 files first, then the working tree copied over them and the UI reloaded. `devtools/zoom-while-turning.js`
+samples every 100 ms; the camera's own zoom is what counts, since the mod's announced zoom is taken a frame after
+each notch.
+
+- 1.1.2. Angle gauge let go, then nine notches out: the camera stayed at 0.73 throughout and the lens went on to 44
+  degrees at that height. Angle key tapped, then three notches: the zoom never left 0.4. Angle key held with three
+  notches: never left 0.4. Turn key tapped, then three notches: 0.4, 0.49, 0.49, 0.58, 0.67, a whole notch at a time
+  with nothing in between. Compass dragged with three notches: the same notch-sized jumps. One notch past the limit
+  with the gauge settling: right (zoom 1, lens 44).
+- The fix. Gauge then nine notches: the zoom reached 1, the lens stayed at 35 until it did, and it ended at 90
+  degrees and 1.54. Angle key tapped: 0.67. Angle key held: 0.67, and the angle glided on to 78. Turn key tapped:
+  0.444, 0.487, 0.566, 0.621, 0.665, 0.67, eased; the heading waited at 1 until the zoom was in, then turned to 45.
+  Compass dragged: eased the same way to 0.67; the heading paused at 20 and 31 while each notch moved and ended on
+  74. One notch past the limit: unchanged.
+- `far-out-feel.js` on the full fix. The fast spin of nine notches now ends at 1.54 with the 90 degree lens (1.1.2
+  and the first fix ended at 1.32 to 1.33, lens 68). The gap between lens and angle averaged 0.1% on every case
+  (worst 1.3%), against 0.3 to 0.8% for the first fix. Back in fast from 1.18, nine notches ended at 0.37, every
+  notch kept (1.1.2 ended at 0.54). With the player's angle at 40, the spin out (on 1.1.2 stuck at 0.73, the same
+  bug as the gauge) reached 1.54, the angle within 1.4 degrees of 40 times the lens's share left, worst 5.
+- `keep-angle-far-out.js`: from 60 degrees the notches read 60, 58.3, 53.7, 49.2, 44.6, 40, 40, and at the game's
+  angle 40 throughout, as in the entry above.
+- Seen alongside, not looked into: the mod's announced zoom inside the game's range is the camera's a frame after
+  each notch, so after a quick spin the last announcement trails the camera (0.512 announced, camera at 0.37; 0.614
+  against 0.54 on 1.1.2). Whether the panel's zoom gauge shows that wasn't checked.
+
+Not reached: the same with the usual mod set, and a real wheel.

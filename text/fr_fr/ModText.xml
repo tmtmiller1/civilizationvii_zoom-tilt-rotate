@@ -9,6 +9,8 @@
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="fr_FR"><Text>Plus près (7x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="fr_FR"><Text>Beaucoup plus près (18x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="fr_FR"><Text>Au maximum (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE" Language="fr_FR"><Text>Garder l'inclinaison en vue très éloignée</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE_DESCRIPTION" Language="fr_FR"><Text>Au-delà de la vue la plus éloignée du jeu, la caméra bascule vers une vue plongeante à la verticale. Cochez cette case pour garder votre inclinaison. La caméra ne bascule vers le bas que ce qu'il faut pour que le ciel reste hors de l'écran, et avec l'inclinaison du jeu elle ne bascule pas du tout. Les changements s'appliquent immédiatement.</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="fr_FR"><Text>{1_Num}°</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="fr_FR"><Text>Pas de rotation</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="fr_FR"><Text>De combien une pression sur une touche de rotation, ou sur les boutons de rotation du panneau de la caméra, fait tourner la vue. La vue garde cette orientation jusqu'à ce que vous la tourniez à nouveau ou que vous reveniez à la normale.</Text></Replace>

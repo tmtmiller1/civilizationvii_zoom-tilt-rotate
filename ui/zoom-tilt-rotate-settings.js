@@ -1,5 +1,5 @@
-// zoom-tilt-rotate-settings.js - the player's choices: how close the zoom goes, the camera's angle and
-// turn steps, and the camera keys.
+// zoom-tilt-rotate-settings.js - the player's choices: how close the zoom goes, whether far out keeps the angle, the
+// camera's angle and turn steps, and the camera keys.
 //
 // The values live in the shared "modSettings" localStorage entry under the mod's id, the store Tower's other mods
 // use (settings-keeper.js makes it survive a restart). They're view preferences, so none of it goes into the save.
@@ -178,6 +178,15 @@ export function getCloseUpReach() {
 
 export function setCloseUpReach(id) {
   if (CLOSE_UP_REACHES.some((reach) => reach.id === id)) write("closeUp", id);
+}
+
+/** @returns {boolean} Whether zooming out past the game's farthest view keeps the camera's angle. */
+export function getKeepAngleFarOut() {
+  return section().keepAngleFarOut === true;
+}
+
+export function setKeepAngleFarOut(keep) {
+  write("keepAngleFarOut", !!keep);
 }
 
 /** @returns {number} Degrees per press of a turn key. */

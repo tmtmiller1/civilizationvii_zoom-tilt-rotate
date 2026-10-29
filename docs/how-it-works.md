@@ -15,8 +15,33 @@ at its own angle; it follows the tilt and the lens through `Camera.setTilt`, `Ca
 
 - The camera has no way to read its field of view, so the mod measures it from where two points on the screen land
   on the map. That keeps it right when something else resets the camera.
-- Setting the field of view cancels a zoom that is still moving, so the lens past a limit is applied only once the
+- Setting the field of view cancelled a zoom that was still moving, so the lens past a limit is applied only once the
   zoom has reached that limit.
+- What other camera calls do to a zoom still on its way, measured on 1.5.0 on 2026-10-29 (`devtools/zoom-freeze.js`,
+  a zoom from 0.6 to 1 at about 100 frames a second):
+  - A tilt sent in the same frame, after the zoom, cancels it for good. One sent just before it, a frame later or
+    30 ms in leaves it alone.
+  - A tilt or a lens change every frame holds the zoom still while they keep coming, and it goes on once they stop.
+    Every second frame slows it; every third frame, or 60 ms apart or more, leaves it alone.
+  - A turn (`Camera.rotate`), once or repeated, makes the zoom jump straight to its end.
+
+  The angle and heading eases used to send a tilt or a turn every frame, so tapping an angle or turn key, or letting
+  go of a gauge, and then scrolling cancelled or jerked the zoom. Past the far limit that left the wide lens going on
+  at the wrong height. Every zoom the mod sends now goes through `sendZoom` in `ui/zoom-tilt-rotate-view.js`. While
+  one is on its way, tilts skip the frame it started in and go out at most every 60 ms (the engine smooths the angle
+  in between), and turns wait for it to arrive. If a zoom past a limit still hasn't reached it after 1.5 s, the
+  view stays where the camera stopped instead of putting the lens on.
+- The engine eases a lens change itself, quickly at first (time constant about 250 ms), and smooths each tilt call
+  too (about 105 ms for one call; a target that changes every frame trails by about 200 ms). Easing the far-out tilt
+  on the mod's own clock therefore started late and stalled at each notch while the lens kept moving. Instead, while
+  the lens eases past the far limit, the mod measures it every frame and sends the tilt for the lens on screen plus
+  0.4 of the way it still has to go. Measured in game, that kept the angle within about 1% of the lens at one notch
+  and on a fast spin, where 1.1.2 trailed by up to a third (`devtools/far-out-sync.js`, `devtools/far-out-feel.js`).
+- At the far limit the game's own angle is 40 degrees from straight down, and its angle barely moves across the top
+  half of its zoom range (41.7 degrees at zoom 0.46). Held at 40, the 90 degree lens puts the top of the screen 85
+  degrees from straight down, about twelve camera heights out, on the map's far edge. Sky shows once the angle plus
+  half the lens passes 90. "Keep the angle when zoomed far out" holds the angle and tips down only as far as keeps
+  that sum at 85.
 - A trackpad sends wheel events with no movement in them when the fingers land, rest or lift, and at the end of its
   momentum. The game reports every one as a scroll down, whichever way you were scrolling. Any real movement, even a
   fraction of a line from a wheel or a trackpad, arrives with a distance of at least 1 in its own direction, so the
@@ -29,16 +54,16 @@ at its own angle; it follows the tilt and the lens through `Camera.setTilt`, `Ca
 - The engine won't take a field of view under 1 degree or over 120. Anything past those is clamped, and every value
   in between holds until something changes it. Past 90 degrees, looking straight down, most of the screen is off the
   edge of the map, so the far end stops at 90.
-- `Camera.setTilt(angle, 1)` takes 0 to 80 degrees from straight down, and `Camera.rotate(heading, true)` turns the
-  view and holds it; `Camera.getState()` reports both, so every ease starts from what's on screen. Both jump straight
-  to the new value, so the mod eases them itself. `Camera.restoreDefaults()` (closing the place-building or buy-tile
-  screen, among others) drops the lens at once and starts the engine swinging the heading to north and the tilt
-  weight to 0 over about half a second, the same swing as `Camera.rotate(0, false)`. A `Camera.rotate(heading, true)`
-  in the same frame stops the swing before it shows, so the mod holds the heading there and then eases the tilt back.
-  Waiting a frame and easing from what the camera reports races that swing: a read taken before it moved looks like
-  "already there", and the camera then turns all the way to north; a read taken later eases back from part-way, a
-  visible wobble. The place-building screen's own framing (a `Camera.addKeyframe` with `FLAG_ALL`) leaves the heading
-  alone; `KeyframeFlag` has no rotation bit.
+- `Camera.setTilt(angle, 1)` takes 0 to 80 degrees from straight down, and `Camera.rotate(heading, true)` turns the view
+  and holds it; `Camera.getState()` reports both, so every ease starts from what's on screen. The rotation jumps
+  straight to the new value and the tilt is only smoothed a little, so the mod eases them itself.
+  `Camera.restoreDefaults()` (closing the place-building or buy-tile screen, among others) drops the lens at once and
+  starts the engine swinging the heading to north and the tilt weight to 0 over about half a second, the same swing as
+  `Camera.rotate(0, false)`. A `Camera.rotate(heading, true)` in the same frame stops the swing before it shows, so the
+  mod holds the heading there and then eases the tilt back. Waiting a frame and easing from what the camera reports
+  races that swing: a read taken before it moved looks like "already there", and the camera then turns all the way to
+  north; a read taken later eases back from part-way, a visible wobble. The place-building screen's own framing (a
+  `Camera.addKeyframe` with `FLAG_ALL`) leaves the heading alone; `KeyframeFlag` has no rotation bit.
 - Keyboard, edge and gamepad panning move along the map, not the screen, so the mod turns each pan step by the
   heading. The step is also scaled by tan(fov / 2), which keeps a held arrow key moving the same share of the screen
   at any lens: about 1.56 screens per half second near the ground and 0.8 to 1.0 far out, against the game's own

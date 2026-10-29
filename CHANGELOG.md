@@ -2,6 +2,20 @@
 
 All notable changes to Zoom, Tilt, & Rotate are documented here. This project follows semantic versioning.
 
+## [1.2.0] - 2026-10-29
+
+- Zooming out past the game's farthest view is smooth again. The camera's angle used to start late and stop at each
+  notch, so the view widened first and tipped afterwards. Now the angle turns along with the lens, and on a fast
+  scroll it keeps pace the whole way. Reported by players who found it wobbly.
+- Zooming straight after tapping an angle or turn key, holding one, or letting go of the angle gauge or compass now
+  zooms normally. Before, the zoom could stop dead, or jump instead of easing, and past the farthest view the wide
+  view could go on at the wrong height.
+- A quick spin of the wheel past either end of the game's range keeps every notch. Before, about half of them were
+  lost while the view caught up, so you had to keep spinning to reach the end.
+- "Keep the angle when zoomed far out" in Options > Add-ons. With it ticked, zooming out past the farthest view keeps
+  your angle instead of turning the camera straight down. It only tips down as far as it needs to keep the sky off the
+  screen, and at the game's own angle it doesn't tip at all. Off by default.
+
 ## [1.1.2] - 2026-10-17
 
 - License: from this version the mod is under the Tower Mod License 1.0, in LICENSE. You can still play it, read the

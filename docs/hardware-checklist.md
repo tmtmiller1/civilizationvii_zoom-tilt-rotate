@@ -46,6 +46,8 @@ Add a row for each sitting.
 | W4 | Keep scrolling out past the game's farthest view | Six notches; the camera turns to look straight down and most of the map fits on screen | |
 | W5 | A fast spin each way | The zoom stops soon after the wheel does | |
 | W6 | With the recorder on, one notch each way, then look at `raw` | Each wheel event has a distance (5 or -5 so far). Note any wheel event with 0: the mod ignores those | |
+| W7 | Spin the wheel out fast from the middle of the game's range, through the farthest view and on | The camera tips toward straight down along with the widening view, with no pause or step at each notch, and the two finish together | |
+| W8 | Tick "Keep the angle when zoomed far out" in Options, then W7 again | The angle stays put the whole way out; the view widens and the map's far edge comes into view at the top, with no sky | |
 
 ## Trackpad pinch (Mac)
 

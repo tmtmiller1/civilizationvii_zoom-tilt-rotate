@@ -9,6 +9,8 @@
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="ja_JP"><Text>近く (7x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="ja_JP"><Text>もっと近く (18x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="ja_JP"><Text>最大まで (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE" Language="ja_JP"><Text>遠景でもカメラの傾きを保つ</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE_DESCRIPTION" Language="ja_JP"><Text>ゲーム本来の最も遠い視点よりさらにズームアウトすると、カメラは真上からの見下ろしに変わります。オンにすると、今の傾きを保ちます。空が画面に入らないよう必要な分だけ下を向き、ゲーム本来の傾きのままなら傾きは変わりません。変更はすぐに反映されます。</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="ja_JP"><Text>{1_Num}°</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="ja_JP"><Text>回転の幅</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="ja_JP"><Text>回転キー、またはカメラパネルの回転ボタンを1回押したときに視点が回転する角度です。もう一度回転させるか元に戻すまで、視点はその向きのままです。</Text></Replace>

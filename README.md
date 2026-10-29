@@ -63,7 +63,12 @@ Zoom with the mouse wheel, a two-finger scroll on a trackpad, the gamepad trigge
   The game's closest view (left) and the default close-up of the same soldiers (right).
 
 - **Zooming out past the limit** widens the field of view to 90 degrees while the camera turns to look straight
-  down, so you see the map instead of sky. That's also six notches.
+  down. That's also six notches. The angle turns along with the lens, so the two arrive together however fast you
+  scroll.
+- **Keeping your angle far out.** Tick "Keep the angle when zoomed far out" in Options > Add-ons > Zoom, Tilt, &
+  Rotate and the camera keeps its angle instead of turning straight down. It only tips down as far as it needs to
+  keep the sky off the screen. At the game's own angle that's not at all, and you see the map in perspective out to
+  its far edge.
 
 <p>
   <img src="docs/screenshots/04-game-farthest-view.jpg" alt="The game's own farthest view" width="49%">
@@ -181,9 +186,10 @@ Portuguese (Brazil), Russian and Chinese (Simplified and Traditional), following
 ## How it works
 
 The game's camera zooms from 0 (closest) to 1 (farthest). The mod keeps its own zoom value that runs past both ends
-and, beyond them, changes the camera's field of view (and, going out, its tilt) instead of the zoom. It sets the
-angle and heading through the camera's own tilt and rotate calls, eases them itself, and puts them back whenever the
-game resets the camera. The details, and what the engine allows, are in [docs/how-it-works.md](docs/how-it-works.md).
+and, beyond them, changes the camera's field of view (and, going out, its tilt) instead of the zoom. Going out, the
+tilt follows the field of view on screen frame by frame. It sets the angle and heading through the camera's own tilt
+and rotate calls, eases them itself, and puts them back whenever the game resets the camera. The details, and what
+the engine allows, are in [docs/how-it-works.md](docs/how-it-works.md).
 
 ## Development
 

@@ -25,6 +25,12 @@
         <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY">
             <Text>All the way (36x)</Text>
         </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE">
+            <Text>Keep the angle when zoomed far out</Text>
+        </Row>
+        <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE_DESCRIPTION">
+            <Text>Zooming out past the game's farthest view turns the camera to look straight down. Tick this to keep your angle instead. The camera only tips down as far as it needs to keep the sky off the screen, and at the game's own angle it doesn't tip at all. Changes apply right away.</Text>
+        </Row>
         <Row Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES">
             <Text>{1_Num}°</Text>
         </Row>

@@ -9,6 +9,8 @@
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="de_DE"><Text>Näher (7x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="de_DE"><Text>Viel näher (18x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="de_DE"><Text>Ganz nah (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE" Language="de_DE"><Text>Neigung beibehalten, wenn weit herausgezoomt</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE_DESCRIPTION" Language="de_DE"><Text>Wenn Ihr über die fernste Ansicht des Spiels hinaus herauszoomt, neigt sich die Kamera, bis sie senkrecht nach unten blickt. Aktiviert dies, um stattdessen Eure Neigung zu behalten. Die Kamera neigt sich nur so weit nach unten, wie nötig ist, damit kein Himmel ins Bild kommt, und bei der Neigung des Spiels selbst gar nicht. Änderungen gelten sofort.</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="de_DE"><Text>{1_Num}°</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="de_DE"><Text>Drehschritt</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="de_DE"><Text>Wie weit ein Druck auf eine Drehtaste oder die Drehknöpfe im Kamerafenster die Ansicht dreht. Die Ansicht bleibt in diese Richtung gewandt, bis Ihr sie erneut dreht oder zur normalen Ansicht zurückkehrt.</Text></Replace>

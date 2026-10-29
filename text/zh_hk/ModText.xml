@@ -9,6 +9,8 @@
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="zh_Hant_HK"><Text>更近（7x）</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="zh_Hant_HK"><Text>近得多（18x）</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="zh_Hant_HK"><Text>拉到最近（36x）</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE" Language="zh_Hant_HK"><Text>遠景時保持鏡頭傾斜</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE_DESCRIPTION" Language="zh_Hant_HK"><Text>縮放超過遊戲最遠的視角後，鏡頭會轉為垂直俯視。勾選此項可保持你的傾斜角度。鏡頭只會向下傾斜到讓天空不出現在螢幕上為止，在遊戲預設的傾斜角度下則完全不會傾斜。變更會立即生效。</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="zh_Hant_HK"><Text>{1_Num}°</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="zh_Hant_HK"><Text>轉動幅度</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="zh_Hant_HK"><Text>每按一次轉向鍵，或按一下鏡頭面板中的轉向按鈕，視角轉動的角度。視角會一直朝著那個方向，直到你再次轉動或恢復正常。</Text></Replace>

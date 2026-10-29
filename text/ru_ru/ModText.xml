@@ -9,6 +9,8 @@
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="ru_RU"><Text>Ближе (7x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="ru_RU"><Text>Гораздо ближе (18x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="ru_RU"><Text>До предела (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE" Language="ru_RU"><Text>Сохранять наклон при сильном отдалении</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE_DESCRIPTION" Language="ru_RU"><Text>Если отдалить камеру дальше самого дальнего вида в игре, она поворачивается, чтобы смотреть строго вниз. Включите, чтобы сохранять свой наклон. Камера наклоняется вниз только настолько, чтобы небо не попадало на экран, а при наклоне самой игры не наклоняется совсем. Изменения применяются сразу.</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="ru_RU"><Text>{1_Num}°</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="ru_RU"><Text>Шаг поворота</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="ru_RU"><Text>На сколько поворачивается обзор при одном нажатии клавиши поворота или кнопок поворота на панели камеры. Обзор остаётся в этом направлении, пока вы не повернёте его снова или не вернёте обычный вид.</Text></Replace>

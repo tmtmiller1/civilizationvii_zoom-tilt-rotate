@@ -9,6 +9,8 @@
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_CLOSER" Language="it_IT"><Text>Più vicino (7x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_MUCH_CLOSER" Language="it_IT"><Text>Molto più vicino (18x)</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_CLOSE_UP_ALL_THE_WAY" Language="it_IT"><Text>Al massimo (36x)</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE" Language="it_IT"><Text>Mantieni l'inclinazione con lo zoom molto lontano</Text></Replace>
+        <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_KEEP_ANGLE_DESCRIPTION" Language="it_IT"><Text>Oltre la visuale più lontana del gioco, la visuale passa alla vista dall'alto. Attiva questa opzione per mantenere la tua inclinazione. La visuale si abbassa solo quanto serve per tenere il cielo fuori dallo schermo, e con l'inclinazione del gioco non si abbassa affatto. Le modifiche si applicano subito.</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_DEGREES" Language="it_IT"><Text>{1_Num}°</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP" Language="it_IT"><Text>Passo di rotazione</Text></Replace>
         <Replace Tag="LOC_ZOOM_TILT_ROTATE_OPTION_TURN_STEP_DESCRIPTION" Language="it_IT"><Text>Di quanto ruota la visuale ogni pressione di un tasto di rotazione o dei pulsanti di rotazione nel pannello della visuale. La visuale resta orientata così finché non la ruoti di nuovo o torni alla normalità.</Text></Replace>

@@ -3,6 +3,7 @@
 
 const controller = (await import("/core/ui/camera/camera-controller.js")).default;
 const { InterfaceMode } = await import("/core/ui/interface-modes/interface-modes.js");
+const { CinematicManager } = await import("/base-standard/ui/cinematic/cinematic-manager.js");
 
 const results = {};
 const FINISH = InputActionStatuses.FINISH;
@@ -49,8 +50,19 @@ function cameraState() {
   };
 }
 
+// A cinematic (a wonder found, say) takes the camera, and every zoom call does nothing until it ends; switching to the
+// default screen doesn't end it. Stop one if it's running.
+async function noCinematic() {
+  if (InterfaceMode.getCurrent() !== "INTERFACEMODE_CINEMATIC") return;
+  try { CinematicManager.stop(); } catch (_) { /* already over */ }
+  await waitMs(1500);
+  if (InterfaceMode.getCurrent() === "INTERFACEMODE_CINEMATIC") InterfaceMode.switchTo("INTERFACEMODE_DEFAULT");
+  await waitMs(800);
+}
+
 // Back to the default screen and lens, centred on the capital at the given zoom.
 async function resetCamera(zoom) {
+  await noCinematic();
   InterfaceMode.switchToDefault();
   Camera.setVerticalFoV(35);
   Camera.setTilt(0, 0);
